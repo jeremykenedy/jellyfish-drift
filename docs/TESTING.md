@@ -14,7 +14,7 @@ Build and inspect the app with:
 
 ```bash
 bash build.sh
-python3 install.py --serial TV_IP:5555
+python3 install.py --serial TV_IP:5555 --apk build/jellyfish-drift.apk
 ```
 
 Verify the actual DreamService activation, D-pad settings, setting persistence, preview, pause/resume, back/exit, and uninstall on each target. Use an explicit ADB serial and restore any device settings changed during verification. Record hardware, OS/API, display resolution, and build hash in [device verification](VERIFICATION.md).

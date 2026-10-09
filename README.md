@@ -39,7 +39,7 @@
 
 ## Privacy
 
-The application requests no network permission and includes no advertising, analytics, telemetry, crash reporting, or tracking code. It does not make network requests.
+The screensaver requests no network permission and includes no advertising, analytics, telemetry, crash reporting, or tracking code. It makes no network requests. When you run the standalone installer, it contacts GitHub only to download the latest release APK and its checksum; it does not send device or usage data.
 
 ## Features
 
@@ -60,7 +60,7 @@ Fire TV, Android TV, and Google TV behavior is listed in [device verification](d
 
 ## Installation
 
-Download the signed APK and matching SHA-256 file from [GitHub Releases](https://github.com/jeremykenedy/jellyfish-drift/releases). Verify the checksum, install the APK, then select Jellyfish Drift in the device's Display or Ambient mode screensaver settings. The standalone installer and uninstaller are documented in [installation](docs/INSTALLATION.md).
+Connect the TV with ADB, then run `python3 install.py --serial TV_IP:5555`. The installer downloads the latest signed release, verifies its published SHA-256, and installs or updates the app. Select Jellyfish Drift afterward in the TV's screensaver settings. Installation, local builds, and removal are covered in [installation](docs/INSTALLATION.md).
 
 ## Configuration
 
