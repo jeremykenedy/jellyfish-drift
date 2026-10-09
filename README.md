@@ -34,6 +34,7 @@
 - [Screenshots](#screenshots)
 - [Building and testing](#building-and-testing)
 - [Documentation](#documentation)
+- [Release notes](#release-notes)
 - [License](#license)
 
 ## Privacy
@@ -96,6 +97,10 @@ The build uses the Android SDK and JDK without third-party runtime dependencies.
 - [CI](docs/CI.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 - [Release process](docs/RELEASING.md)
+
+## Release notes
+
+- [Version 1.0.0](docs/releases/v1.0.0.md)
 
 Show some love by starring this repository on GitHub: [Star Jellyfish Drift](https://github.com/jeremykenedy/jellyfish-drift/stargazers).
 
