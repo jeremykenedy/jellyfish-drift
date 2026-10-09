@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" role="img" aria-labelledby="title desc">
+  <title id="title">Jellyfish Drift</title>
+  <desc id="desc">Animated jellyfish for TV screens with no ads, analytics, or tracking.</desc>
+  <defs>
+    <linearGradient id="water" x2="0" y2="1"><stop stop-color="#e6f5f4"/><stop offset="1" stop-color="#c6e4e2"/></linearGradient>
+    <radialGradient id="bell" cx="38%" cy="28%"><stop stop-color="#f4ffff" stop-opacity=".95"/><stop offset=".35" stop-color="#46c1d2" stop-opacity=".82"/><stop offset="1" stop-color="#227eaa" stop-opacity=".35"/></radialGradient>
+  </defs>
+  <rect width="800" height="200" rx="16" fill="#fff" stroke="#e5e7eb"/>
+  <text x="40" y="78" fill="#0f172a" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-size="40" font-weight="700" letter-spacing="-.5">Jellyfish Drift</text>
+  <text x="42" y="108" fill="#64748b" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-size="14">Animated TV screensaver with no ads, analytics, or tracking</text>
+  <g font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-size="10" font-weight="500" text-anchor="middle">
+    <rect x="40" y="130" width="90" height="22" rx="11" fill="#eff6ff" stroke="#93c5fd" stroke-width=".8"/><text x="85" y="144" fill="#1e40af">Android TV</text>
+    <rect x="138" y="130" width="78" height="22" rx="11" fill="#f0fdf4" stroke="#86efac" stroke-width=".8"/><text x="177" y="144" fill="#166534">Fire TV</text>
+    <rect x="224" y="130" width="84" height="22" rx="11" fill="#f5f3ff" stroke="#c4b5fd" stroke-width=".8"/><text x="266" y="144" fill="#6d28d9">Google TV</text>
+  </g>
+  <g transform="translate(612 24)">
+    <path d="M10 78C10 39 33 14 67 14s57 25 57 64c-10-10-18-10-27 0-9-10-18-10-27 0-9-10-18-10-27 0-9-10-17-10-26 0Z" fill="url(#bell)" stroke="#5bbaca" stroke-width="2"/>
+    <path d="M25 82c2 31-5 43 0 73M45 82c-3 36 5 48 0 78M66 82c6 34-5 53 2 78M87 82c-2 34 6 49 0 77M107 82c3 33-5 46 1 73" fill="none" stroke="#3295aa" stroke-opacity=".72" stroke-width="3" stroke-linecap="round"/>
+    <path d="M0 169c40-12 73 9 116 0s60-2 84 1" fill="none" stroke="#81c9cb" stroke-width="2"/>
+  </g>
+</svg>
