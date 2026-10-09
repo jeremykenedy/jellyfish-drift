@@ -6,7 +6,7 @@ This file records evidence rather than inferred support. A build on an emulator 
 | --- | --- | --- |
 | Android TV emulator | `sdk_google_atv64_arm64` | Settings activity and animated preview renderer launched; 1920x1080 screenshot captured. This emulator does not expose the system DreamService manager. |
 | Fire TV | AFTDEC012E, Fire OS 11, API 30 | DreamService was activated and captured after 6 seconds. Settings activity, remote preview, and settings provider schema were verified. The TV reported a 3840x2160 panel with a 1920x1080 logical-size override; native 4K composition was not verified. |
-| Google TV | Physical device not available | Not verified. |
+| Google TV | Physical device not available | Not verified. We are looking for a Google TV owner to test installation, screensaver selection and activation, and remote settings, then report the device model, OS/API, resolution, and results in the [issue tracker](https://github.com/jeremykenedy/jellyfish-drift/issues). |
 
 The Fire TV capture is [jellyfish-dream-fire-tv.jpg](screenshots/jellyfish-dream-fire-tv.jpg). It was taken from the running `JellyfishDreamService`; the capture helper restored the prior screensaver selection (`com.androsaver/.ScreensaverService`) and enabled state (`1`) afterward. The dark 1920x1080 emulator screenshot is [jellyfish-preview.png](screenshots/jellyfish-preview.png); the light-background preview with sunlight enabled is [jellyfish-light-preview.png](screenshots/jellyfish-light-preview.png). The app's Android DreamService preview thumbnail uses a downsized copy of the Fire TV capture.
 
