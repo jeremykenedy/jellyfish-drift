@@ -69,7 +69,7 @@ Open Jellyfish Drift from the TV launcher to adjust its settings. The app stores
 ## Screenshots
 
 <p align="center">
-    <img src="docs/screenshots/jellyfish-preview.png" alt="Animated moon jellyfish drifting across deep water on an Android TV screen" width="49%">
+    <img src="docs/screenshots/jellyfish-preview-android-tv.png" alt="Animated moon jellyfish drifting across deep water on an Android TV screen" width="49%">
     <img src="docs/screenshots/jellyfish-light-preview.png" alt="Animated moon jellyfish over light water with the sunlight option enabled on a Fire TV" width="49%">
 </p>
 
