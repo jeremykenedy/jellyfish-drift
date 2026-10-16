@@ -18,7 +18,10 @@ final class JellyfishGeometry {
         if (kind == 0) {
           quad(vertices, a, b, c, d, kind, 0);
         } else {
-          quad(vertices, -1f, 1f, c, d, kind, a);
+          int folds = kind == 2 ? 8 : 1;
+          for (int fold = 0; fold < folds; fold++) {
+            quad(vertices, -1f + 2f * fold / folds, -1f + 2f * (fold + 1) / folds, c, d, kind, a);
+          }
         }
       }
     }

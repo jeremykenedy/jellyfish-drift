@@ -30,7 +30,7 @@ final class JellyfishRenderer implements GLSurfaceView.Renderer {
   private final float[] camera = new float[16];
   private final float[][] animals;
   private final FloatBuffer bell = buffer(JellyfishGeometry.surface(0, 80, 28));
-  private final FloatBuffer threads = buffer(JellyfishGeometry.surface(1, 48, 44));
+  private final FloatBuffer threads;
   private final FloatBuffer arms = buffer(JellyfishGeometry.surface(2, 4, 96));
   private final FloatBuffer quad =
       buffer(
@@ -46,9 +46,11 @@ final class JellyfishRenderer implements GLSurfaceView.Renderer {
 
   JellyfishRenderer(JellyfishOptions options, AssetManager assets, Resources resources) {
     this.options = options;
+    int filamentCount = options.species == 0 ? 64 : options.species == 1 ? 24 : 16;
+    threads = buffer(JellyfishGeometry.surface(1, filamentCount, 64));
     this.assets = assets;
     this.resources = resources;
-    animals = new float[options.count][5];
+    animals = new float[options.count][8];
     Random random = new Random(40319);
     for (int i = 0; i < animals.length; i++) {
       float[] a = animals[i];
@@ -59,6 +61,9 @@ final class JellyfishRenderer implements GLSurfaceView.Renderer {
       a[2] = -0.65f + random.nextFloat() * 0.8f;
       a[3] = (0.70f + random.nextFloat() * 0.45f) * (float) Math.sqrt(7f / options.count);
       a[4] = random.nextFloat() * 6.28f;
+      a[5] = 0.88f + random.nextFloat() * 0.25f;
+      a[6] = 0.80f + random.nextFloat() * 0.36f;
+      a[7] = 0.86f + random.nextFloat() * 0.29f;
     }
     // One nearer animal gives the shoal depth rather than arranging identical rows.
     animals[0][0] = -0.15f;
@@ -122,7 +127,7 @@ final class JellyfishRenderer implements GLSurfaceView.Renderer {
       float y = a[1] + (float) Math.sin(t * 0.25) * 0.12f + (float) Math.sin(t * 1.45) * 0.025f;
       Matrix.setIdentityM(model, 0);
       Matrix.translateM(model, 0, a[0] + (float) Math.sin(t * 0.13) * 0.20f, y, a[2]);
-      Matrix.rotateM(model, 0, 17 + (float) Math.sin(t * 0.18) * 10, 1, 0, 0);
+      Matrix.rotateM(model, 0, 8 + a[4] * 4 + (float) Math.sin(t * 0.18) * 12, 1, 0, 0);
       Matrix.rotateM(model, 0, (float) Math.sin(t * 0.15) * 14, 0, 0, 1);
       Matrix.rotateM(model, 0, a[4] * 57.2958f + elapsed * 1.3f, 0, 1, 0);
       Matrix.scaleM(model, 0, a[3], a[3], a[3]);
@@ -130,6 +135,7 @@ final class JellyfishRenderer implements GLSurfaceView.Renderer {
           GLES20.glGetUniformLocation(animalProgram, "uModel"), 1, false, model, 0);
       uniform(animalProgram, "uPhase", a[4]);
       uniform(animalProgram, "uScale", a[3]);
+      GLES20.glUniform3f(GLES20.glGetUniformLocation(animalProgram, "uShape"), a[5], a[6], a[7]);
       uniform(animalProgram, "uDepth", 0.72f + (a[2] + 0.7f) * 0.30f);
       draw(animalProgram, threads);
       draw(animalProgram, arms);

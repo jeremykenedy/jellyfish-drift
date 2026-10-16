@@ -26,10 +26,10 @@ public final class JellyfishGeometryTest {
     for (int kind = 1; kind <= 2; kind++) {
       int strands = kind == 1 ? 48 : 4;
       float[] ribbons = JellyfishGeometry.surface(kind, strands, 44);
-      assertEquals(strands * 44 * 6 * 4, ribbons.length);
+      assertEquals(strands * 44 * 6 * 4 * (kind == 2 ? 8 : 1), ribbons.length);
       java.util.Set<Float> angles = new java.util.HashSet<>();
       for (int i = 0; i < ribbons.length; i += 4) {
-        assertTrue(ribbons[i] == -1 || ribbons[i] == 1);
+        assertTrue(ribbons[i] >= -1 && ribbons[i] <= 1);
         assertTrue(ribbons[i + 1] >= 0 && ribbons[i + 1] <= 1);
         assertEquals(kind, ribbons[i + 2], 0);
         angles.add(ribbons[i + 3]);
