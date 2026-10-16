@@ -18,12 +18,12 @@ vec3 oralPoint(float u,float q,float strand,float t){
  float envelope=(0.37+0.63*sin(PI*pow(q,0.72)))*(1.0-q*0.58);
  float width=mix(0.145,0.108,moon)*envelope;
  float edge=pow(abs(u),2.0);
- float frill=1.0+edge*(0.28*sin(q*63.0+strand)+0.17*sin(q*111.0-strand*2.0));
+ float frill=1.0+edge*(0.24*sin(q*53.0+strand)+0.10*sin(q*89.0-strand*2.0));
  float twist=strand+q*4.5+0.28*sin(q*11.0-t*0.32);
  vec3 p=vec3(0.12*cos(strand)+q*0.15*sin(t*0.61-q*5.1+strand),
   -q*length,0.12*sin(strand)+q*0.13*sin(t*0.47-q*6.0-strand));
  p+=vec3(cos(twist),0.0,sin(twist))*u*width*frill;
- p.y+=edge*0.023*sin(q*72.0+u*3.0+strand)+0.022*sin(u*9.0+q*19.0+t*0.3);
+ p.y+=edge*0.018*sin(q*58.0+u*3.0+strand)+0.022*sin(u*9.0+q*19.0+t*0.3);
  p.z+=0.025*sin(u*7.0+q*23.0+strand)*sin(PI*q);
  return p;
 }
@@ -62,8 +62,8 @@ void main(){
  }else{
   float strand=aParam.w*2.0*PI;
   p=oralPoint(aParam.x,aParam.y,strand,t);
-  vec3 tangentU=oralPoint(aParam.x+0.012,aParam.y,strand,t)-p;
-  vec3 tangentV=oralPoint(aParam.x,min(1.0,aParam.y+0.005),strand,t)-oralPoint(aParam.x,max(0.0,aParam.y-0.005),strand,t);
+  vec3 tangentU=oralPoint(aParam.x+0.045,aParam.y,strand,t)-oralPoint(aParam.x-0.045,aParam.y,strand,t);
+  vec3 tangentV=oralPoint(aParam.x,min(1.0,aParam.y+0.012),strand,t)-oralPoint(aParam.x,max(0.0,aParam.y-0.012),strand,t);
   n=normalize(cross(tangentU,tangentV));
  }
  vec4 world=uModel*vec4(p,1.0);

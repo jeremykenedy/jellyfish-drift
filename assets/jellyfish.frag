@@ -62,12 +62,13 @@ void main(){
  }else{
   float oral=step(1.5,vParam.z);
   float edge=pow(max(0.0,1.0-abs(vParam.x)),0.40);
-  float fold=0.5+0.5*sin(vParam.y*77.0+vParam.w*35.0+vParam.x*7.0);
+  float fold=0.5+0.5*sin(vParam.y*53.0+vParam.w*35.0+vParam.x*7.0);
   float micro=tissueNoise(vec2(vParam.x*0.4,vParam.y*2.0));
-  float lace=0.75+0.25*sin(vParam.y*183.0+vParam.x*19.0+micro*2.0);
-  alpha=mix(0.67,0.38+fold*0.21+micro*0.05,oral)*edge*(1.0-vParam.y*0.65);
+  float lace=0.90+0.10*sin(vParam.y*113.0+vParam.x*13.0+micro);
+  alpha=mix(0.67,0.43+fold*0.11+micro*0.02,oral)*edge*(1.0-vParam.y*0.65);
   alpha*=mix(1.0,lace,oral);
-  color=tint*(0.85+diffuse*0.35)+glint*spec*0.34;
+  float softLight=pow(abs(dot(reflect(-light,n),eye)),9.0);
+  color=tint*(0.89+diffuse*mix(0.35,0.22,oral))+glint*mix(spec*0.34,softLight*0.045,oral);
   color=mix(color,color*vec3(0.72,0.52,0.80),purple*(0.20+0.25*vParam.y));
  }
  color=mix(color,color*mix(vec3(0.89,0.87,0.84),vec3(0.80,0.66,0.60),nettle),uLight);
