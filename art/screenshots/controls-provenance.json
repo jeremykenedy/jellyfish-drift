@@ -1,0 +1,14 @@
+{
+  "artifactSha256": "90a4f7a78eb2de7efa98a2aba69392417a4d2c50389586a36a2dc33ea748ccbd",
+  "version": "1.1.0",
+  "versionCode": 2,
+  "platform": "Google TV ARM64 API34 emulator5580, 1920x1080",
+  "capturedAt": "2026-10-16T12:06:22.899024+00:00",
+  "routes": [
+    "focused Settings \u2192 remote Select \u2192 Preview \u2192 settled Back to Settings",
+    "Credits via seven remote Down presses and Select; full license scroll",
+    "actual bound nonpersistent DreamService bright/25nettles/fast/rays; Back detached"
+  ],
+  "preferencesRestored": true,
+  "physicalStatus": "Pending root hardware/moving gate"
+}

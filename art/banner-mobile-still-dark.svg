@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="392" height="408" viewBox="0 0 392 408" role="img" aria-label="Jellyfish Drift: no tracking or analytics">
+<defs><linearGradient id="night"><stop stop-color="#0c0a09"/><stop offset="1" stop-color="#1c1917"/></linearGradient><linearGradient id="gel" x2="0" y2="1"><stop stop-color="#93c5fd" stop-opacity=".45"/><stop offset="1" stop-color="#6366f1" stop-opacity=".12"/></linearGradient></defs>
+<rect width="392" height="408" rx="16" fill="url(#night)" stroke="#292524"/>
+<g font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"><text x="20" y="76" font-size="36" font-weight="700" letter-spacing="-.5" fill="#fff">Jellyfish Drift</text>
+<text x="20" y="105" font-size="12" fill="#a8a29e">Living water. No tracking or analytics.</text>
+<rect x="20" y="132" width="82" height="22" rx="11" fill="#172033" stroke="#60a5fa" stroke-width=".8"/><text x="61.0" y="146" fill="#93c5fd" font-size="9" text-anchor="middle">3D bells</text><rect x="110" y="132" width="112" height="22" rx="11" fill="#172033" stroke="#60a5fa" stroke-width=".8"/><text x="166.0" y="146" fill="#93c5fd" font-size="9" text-anchor="middle">Dark and light</text><rect x="230" y="132" width="70" height="22" rx="11" fill="#172033" stroke="#60a5fa" stroke-width=".8"/><text x="265.0" y="146" fill="#93c5fd" font-size="9" text-anchor="middle">Offline</text></g><g transform="translate(129 199) scale(1.12)"><g>
+<g fill="none" stroke="#60a5fa" stroke-linecap="round">
+<path d="M45 65 C22 91 61 105 43 131 M57 67 C83 90 41 113 64 145 M70 65 C49 90 86 106 70 133" stroke-width="4" opacity=".55"/>
+<path d="M25 57 C8 89 36 102 18 128 M37 64 C20 94 50 116 34 145 M83 61 C106 92 76 114 97 140 M94 55 C112 80 91 105 112 126" opacity=".65"/>
+</g>
+<g>
+<path d="M12 54 C15 3 98 2 108 54 C88 74 32 74 12 54Z" fill="url(#gel)" stroke="#60a5fa" stroke-width="1.5"/>
+<path d="M12 54 C42 45 78 45 108 54 M60 15 C35 28 32 42 30 62 M60 15 C48 32 47 49 46 67 M60 15 C74 33 74 50 76 66 M60 15 C92 30 91 44 93 62" fill="none" stroke="#93c5fd" opacity=".55"/>
+<ellipse cx="52" cy="40" rx="6" ry="8" fill="none" stroke="#c4b5fd"/><ellipse cx="67" cy="42" rx="6" ry="8" fill="none" stroke="#c4b5fd"/>
+</g></g></g></svg>
