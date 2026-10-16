@@ -25,7 +25,7 @@ final class JellyfishSceneView extends GLSurfaceView {
             p.getString("light_rays", "off"),
             p.getBoolean("randomize_all", false),
             new Random());
-    setRenderer(new JellyfishRenderer(options, context.getAssets()));
+    setRenderer(new JellyfishRenderer(options, context.getAssets(), context.getResources()));
     setRenderMode(RENDERMODE_CONTINUOUSLY);
   }
 

@@ -2,6 +2,7 @@ precision mediump float;
 uniform float uLight;
 uniform float uSpecies;
 uniform float uDepth;
+uniform sampler2D uTissue;
 varying vec3 vNormal;
 varying vec3 vPosition;
 varying vec4 vParam;
@@ -19,7 +20,7 @@ void main(){
  float spec=pow(abs(dot(reflect(-light,n),eye)),45.0);
  vec3 tint=vec3(0.67,0.83,0.91);
  if(uSpecies>0.5) tint=vec3(0.95,0.64,0.39);
- if(uSpecies>1.5) tint=vec3(0.75,0.55,0.86);
+ if(uSpecies>1.5) tint=vec3(0.80,0.75,0.91);
  float alpha;
  vec3 color;
  if(vParam.z<0.5){
@@ -42,13 +43,18 @@ void main(){
    tissue+=exp(-pow((d-0.112)*26.0,2.0))*opening;
   }
   float detail=canal*0.07+capillary*0.035+rim*0.32;
-  float pigment=uSpecies>0.5?stripe*0.10:0.0;
-  float micro=tissueNoise(uv)*0.018;
+  float pigment=uSpecies>0.5?stripe*0.16:0.0;
+  vec2 materialUV=vec2(0.50+uv.x*0.19,0.17+uv.y*0.075);
+  vec4 material=texture2D(uTissue,materialUV);
+  float materialLuma=dot(material.rgb/max(0.15,material.a),vec3(0.333));
+  float micro=tissueNoise(uv)*0.009+(materialLuma-0.65)*0.12;
+  tissue*=1.0-step(0.5,uSpecies);
   float gel=0.14+0.20*pow(facing,1.6);
   alpha=gel+fresnel*0.34+detail+pigment+tissue*0.19+micro;
   color=tint*(0.74+diffuse*0.40)+vec3(0.62,0.85,0.98)*(detail+spec*0.75);
   color=mix(color,color*vec3(0.91,0.67,0.91),pigment*3.0*step(1.5,uSpecies));
   color+=tissue*vec3(0.20,0.14,0.09);
+  color*=0.85+materialLuma*0.23;
  }else{
   float oral=step(1.5,vParam.z);
   float edge=pow(max(0.0,1.0-abs(vParam.x)),0.65);

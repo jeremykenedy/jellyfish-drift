@@ -1,8 +1,12 @@
 package com.jeremykenedy.jellyfishdrift;
 
 import android.content.res.AssetManager;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
+import android.opengl.GLUtils;
 import android.opengl.Matrix;
 import android.os.SystemClock;
 import java.io.ByteArrayOutputStream;
@@ -18,6 +22,8 @@ import javax.microedition.khronos.opengles.GL10;
 final class JellyfishRenderer implements GLSurfaceView.Renderer {
   private final JellyfishOptions options;
   private final AssetManager assets;
+  private final Resources resources;
+  private int tissueTexture;
   private final float[] vp = new float[16];
   private final float[] model = new float[16];
   private final float[] projection = new float[16];
@@ -34,12 +40,14 @@ final class JellyfishRenderer implements GLSurfaceView.Renderer {
   private int animalProgram;
   private int waterProgram;
   private float aspect = 16f / 9f;
+  private float pixelWorld = 4f / 1080f;
   private long lastFrame;
   private float elapsed;
 
-  JellyfishRenderer(JellyfishOptions options, AssetManager assets) {
+  JellyfishRenderer(JellyfishOptions options, AssetManager assets, Resources resources) {
     this.options = options;
     this.assets = assets;
+    this.resources = resources;
     animals = new float[options.count][5];
     Random random = new Random(40319);
     for (int i = 0; i < animals.length; i++) {
@@ -71,6 +79,7 @@ final class JellyfishRenderer implements GLSurfaceView.Renderer {
   public void onSurfaceCreated(GL10 gl, EGLConfig config) {
     animalProgram = program("jellyfish.vert", "jellyfish.frag");
     waterProgram = program("water.vert", "water.frag");
+    tissueTexture = tissueTexture();
     GLES20.glDisable(GLES20.GL_DEPTH_TEST);
     GLES20.glBlendFunc(GLES20.GL_ONE, GLES20.GL_ONE_MINUS_SRC_ALPHA);
     Matrix.setLookAtM(camera, 0, 0, 0, 5.2f, 0, 0, 0, 0, 1, 0);
@@ -81,6 +90,7 @@ final class JellyfishRenderer implements GLSurfaceView.Renderer {
   public void onSurfaceChanged(GL10 gl, int width, int height) {
     GLES20.glViewport(0, 0, width, height);
     aspect = width / (float) height;
+    pixelWorld = 4f / height;
     Matrix.orthoM(projection, 0, -2f * aspect, 2f * aspect, -2, 2, 1, 12);
     Matrix.multiplyMM(vp, 0, projection, 0, camera, 0);
   }
@@ -99,10 +109,14 @@ final class JellyfishRenderer implements GLSurfaceView.Renderer {
     draw(waterProgram, quad);
     GLES20.glEnable(GLES20.GL_BLEND);
     GLES20.glUseProgram(animalProgram);
+    GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
+    GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, tissueTexture);
+    GLES20.glUniform1i(GLES20.glGetUniformLocation(animalProgram, "uTissue"), 0);
     GLES20.glUniformMatrix4fv(GLES20.glGetUniformLocation(animalProgram, "uVP"), 1, false, vp, 0);
     uniform(animalProgram, "uTime", elapsed);
     uniform(animalProgram, "uLight", options.lightBackground ? 1 : 0);
     uniform(animalProgram, "uSpecies", options.species);
+    uniform(animalProgram, "uPixelWorld", pixelWorld);
     for (float[] a : animals) {
       float t = elapsed + a[4];
       float y = a[1] + (float) Math.sin(t * 0.25) * 0.12f + (float) Math.sin(t * 1.45) * 0.025f;
@@ -115,6 +129,7 @@ final class JellyfishRenderer implements GLSurfaceView.Renderer {
       GLES20.glUniformMatrix4fv(
           GLES20.glGetUniformLocation(animalProgram, "uModel"), 1, false, model, 0);
       uniform(animalProgram, "uPhase", a[4]);
+      uniform(animalProgram, "uScale", a[3]);
       uniform(animalProgram, "uDepth", 0.72f + (a[2] + 0.7f) * 0.30f);
       draw(animalProgram, threads);
       draw(animalProgram, arms);
@@ -127,6 +142,27 @@ final class JellyfishRenderer implements GLSurfaceView.Renderer {
     }
     long spent = SystemClock.uptimeMillis() - now;
     if (spent < 32) SystemClock.sleep(32 - spent);
+  }
+
+  private int tissueTexture() {
+    int[] ids = new int[1];
+    GLES20.glGenTextures(1, ids, 0);
+    GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, ids[0]);
+    GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_LINEAR);
+    GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_LINEAR);
+    GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_S, GLES20.GL_CLAMP_TO_EDGE);
+    GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_T, GLES20.GL_CLAMP_TO_EDGE);
+    BitmapFactory.Options decode = new BitmapFactory.Options();
+    decode.inScaled = false;
+    decode.inSampleSize = 2;
+    int resource =
+        options.species == 0
+            ? R.drawable.jellyfish_moon
+            : options.species == 1 ? R.drawable.jellyfish_nettle : R.drawable.jellyfish_stripe;
+    Bitmap material = BitmapFactory.decodeResource(resources, resource, decode);
+    GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, material, 0);
+    material.recycle();
+    return ids[0];
   }
 
   private static void uniform(int program, String name, float value) {

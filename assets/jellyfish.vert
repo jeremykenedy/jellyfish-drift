@@ -5,6 +5,8 @@ uniform mat4 uVP;
 uniform float uTime;
 uniform float uPhase;
 uniform float uSpecies;
+uniform float uScale;
+uniform float uPixelWorld;
 varying vec3 vNormal;
 varying vec3 vPosition;
 varying vec4 vParam;
@@ -34,6 +36,7 @@ void main(){
   float wave=sin(t*0.72-q*4.1+strand*2.0);
   float wave2=sin(t*0.49-q*8.0+strand);
   float width=mix(0.0062,0.068,oral)*(1.0-q*0.78);
+  width=max(width,(1.0-oral)*uPixelWorld*0.65/uScale);
   float ruffle=1.0+oral*0.37*sin(q*47.0+t+strand);
   p=vec3(attach*cos(strand)+wave*q*0.11,
     -q*length+0.012*sin(strand*11.0),attach*sin(strand)+wave2*q*0.10);
