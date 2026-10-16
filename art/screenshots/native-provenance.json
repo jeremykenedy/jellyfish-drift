@@ -1,0 +1,34 @@
+{
+  "candidate": "/private/tmp/jellyfish-volumetric/build/native-softness/candidate.apk",
+  "sha256": "85b6a8eb0f7bcdecfe369d9f5fb608677acdc8b0622f82729b1d0813c7ce4d68",
+  "bytes": 1246545,
+  "source": "5babb7a2c7377c7311d05ba490e16f282644f5f4",
+  "version": "1.1.0",
+  "versionCode": 2,
+  "status": "Native screenshot source candidate; physical release gate pending",
+  "platform": "Google TV ARM64 emulator5580, API34",
+  "captureSize": "1920x1080",
+  "capturedAt": "2026-10-16T12:02:34.995106+00:00",
+  "images": {
+    "moon-dark.png": "3ba6ee24c254dd523927aff1a9b6a93e4d12b8f1c1fed9b8c549e743b9ed1e8f",
+    "nettle-light.png": "acb4fd765a77207e584329061782da626eed2d11ebb756832d6adde25ddf888a",
+    "purple-school.png": "479183c8d6b995d6270a96ae26548210e163a340e2dc8d424e51e9d7aa1b2d3d"
+  },
+  "restoration": {
+    "prefs": {
+      "background": "dark",
+      "density": "handful",
+      "motion": "normal",
+      "species": "moon",
+      "light_rays": "off",
+      "randomize_all": "false"
+    },
+    "system": {
+      "secure/screensaver_components": "com.jeremykenedy.reelatrium/.ReelAtriumDreamService",
+      "secure/screensaver_enabled": "1",
+      "secure/sleep_timeout": "1200000",
+      "system/screen_off_timeout": "2147483647",
+      "secure/str.auto_wake_up_enabled": "null"
+    }
+  }
+}
