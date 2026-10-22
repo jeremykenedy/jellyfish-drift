@@ -30,6 +30,7 @@
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Configuration](#configuration)
+- [Fire TV Toolkit](#fire-tv-toolkit)
 - [Screenshots](#screenshots)
 - [Building and testing](#building-and-testing)
 - [Documentation](#documentation)
@@ -68,6 +69,20 @@ Connect the TV with ADB, then run `python3 install.py --serial TV_IP:5555`. The 
 ## Configuration
 
 Open Jellyfish Drift from the TV launcher to adjust its settings. The app stores preferences locally. See [configuration](docs/CONFIGURATION.md) for every option and its available values.
+
+## Fire TV Toolkit
+
+[Fire TV Toolkit](https://github.com/jeremykenedy/fire-tv-toolkit) provides guided installation, launcher choices and supported screensaver/sleep settings. Set it up on your computer:
+
+```sh
+git clone https://github.com/jeremykenedy/fire-tv-toolkit.git
+cd fire-tv-toolkit
+node setup.js
+firetv-screensavers --install=jellyfish-drift --yes
+screensaver --set=jellyfish-drift
+```
+
+Run the install command again to update the existing signed package. To remove it, select another screensaver first, then run `firetv-screensavers --uninstall=jellyfish-drift --yes --force`. Removal deletes this app's private preferences. Installation downloads the latest published release; it does not install an unpublished candidate or change the selected dream. Visual controls are in Jellyfish Drift's own settings. See the [host integration contract](docs/INTEGRATION.md) for exact components, settings and release checks.
 
 ## Screenshots
 
