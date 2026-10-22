@@ -6,9 +6,15 @@ The temporary workspace and the previously prepared 90a4 APK were removed during
 
 Its source, shaders, artwork and embedded preview are unchanged. The previous binary is unavailable, so binary equivalence is not claimed. The native and browser records below describe the previously accepted source; this newly signed file requires its own physical playback and restoration gate before release. Current host tests, formatting, privacy and coverage checks pass.
 
+## Recovered APK native check on October 22
+
+The exact `c065f4b58a901f6d80c4c71e597d396772ad61400d0a591f17b69a9afd38b340` APK passed a fresh API34 ARM64 emulator installation and native check. Dark moon jelly settled for 40 seconds before an 8.048644-second 1920x1080 recording. All 245 decoded frames had distinct downscaled hashes, confirming changing output without establishing sustained rendering FPS. Dark moon, light nettle and purple-school captures were visually reviewed; the accepted curved-bell direction remains intact, with angular oral folds still visible.
+
+Actual remote initial Preview focus, Select to Preview, Back to Settings, Credits and license scrolling passed. A nonpersistent purple-striped DreamService bound successfully and detached on Back. Six app preferences and five sampled system settings were restored exactly, then the app stopped at Home. This emulator had no previous installed Jellyfish package, so this run does not establish update preservation. The license text scrolled, but its bottom was not reached during the bounded window. Physical moving playback, pacing and update-preservation approval remain pending for this exact APK. The [native record](../art/screenshots/recovered-native.json) contains capture and movie hashes.
+
 ## 1.1 candidate status
 
-The new renderer is an original GLES2 scene with curved contracting bells, folded oral arms and continuous trailing filaments. It is not recorded footage or numerical volume rendering. Version1.1.0/code2 is a candidate; final native controls, physical moving playback and pacing approval remain release gates.
+The new renderer is an original GLES2 scene with curved contracting bells, folded oral arms and continuous trailing filaments. It is not recorded footage or numerical volume rendering. Version1.1.0/code2 is a candidate; physical moving playback, update preservation and pacing approval remain release gates.
 
 The API34 Google TV ARM64 emulator rendered the signed softness candidate `85b6a8eb0f7bcdecfe369d9f5fb608677acdc8b0622f82729b1d0813c7ce4d68`: dark moon jelly after a 40-second settle, an eight-second moving recording, light sea nettles and twenty-five purple-striped jellyfish. All three native PNGs were reviewed. Actual movie playback showed independent drift and bell contractions. The direction was accepted for a physical gate; folded oral tissue remains visibly angular in places. No photorealistic claim is made.
 
