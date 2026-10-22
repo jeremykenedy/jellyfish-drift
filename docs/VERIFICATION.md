@@ -12,6 +12,13 @@ The exact e804 APK passed a fresh Google TV ARM64 API34 emulator check on Octobe
 Actual remote Preview/Back, Credits and license scrolling, and a nonpersistent bound DreamService/Back passed. All six application preferences and eight sampled OS settings matched their before/after snapshots exactly; the app stopped at Home. The [indexed native record](../art/screenshots/indexed-native.json) identifies the frozen APK and capture hashes. Physical performance, physical moving approval and release publication remain blocked until a fresh device gate passes.
 
 
+## Indexed candidate physical attempt
+
+The exact e804 signed APK updated the physical API30 package in place, preserved its six preferences, and was pulled back with the expected full hash and production certificate. The bounded Settings route harness did not establish foreground readiness, so the run ended before a presentation sample. A corrected exit attempt also ended before measurement. These are incomplete route checks, not a new physical performance result or evidence that the app passed the gate.
+
+Fresh final readbacks confirmed exact restoration of six Jellyfish preferences, all sixteen Aquarium values used by the preceding diagnostic, eight OS settings and the picker's existing backup. Foreground protection remained active. The original selected Aquarium DreamService was restored with a normal, non-test bound Dream and the original Dreaming power state. Further device work was handed back for unrelated setup; e804 remains held for physical pacing and moving approval.
+
+
 ## October 22 physical performance gate failed
 
 The exact c065 signed APK installed on the physical AFTDEC012E/API30. Pulling back its installed APK verified the full SHA-256 and original certificate. Its signed update preserved all six app preferences. Actual remote Settings/Preview/Back, offline Credits scrolling and a dark-moon bound DreamService/Back passed. All six preferences and eight sampled OS values were restored exactly, the original Asleep state was restored, and the picker's live foreground protection and existing backup stayed intact.
