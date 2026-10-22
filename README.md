@@ -123,6 +123,7 @@ The build uses the Android SDK and JDK without third-party runtime dependencies.
 
 ## Release notes
 
+- [Version 1.1.0](docs/releases/v1.1.0.md)
 - [Version 1.0.0](docs/releases/v1.0.0.md)
 
 Show some love by starring this repository on GitHub: [Star Jellyfish Drift](https://github.com/jeremykenedy/jellyfish-drift/stargazers).
