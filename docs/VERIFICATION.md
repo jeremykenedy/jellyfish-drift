@@ -2,7 +2,14 @@
 
 ## Indexed-buffer candidate
 
-Version 1.1.0/code 2 candidate `e804871a9393ec8e564c1e8c2458a904841020debdd0e084e0b8d90134ee2123`, 1,271,121 bytes, addresses the failed physical baseline through shared parameter indices, static GPU vertex/index buffers and cached program locations. It retains every triangle and parameter bit, all mesh resolutions, every species/count and all shader/material assets. Its 15 original non-DEX manifest/resource/asset entries are byte-identical to c065. Host tests prove indexed reconstruction and 16-bit limits; actual Java formatting and 100% line/branch coverage pass (97 lines, 66 branches). Native context recreation and new physical pacing are not yet verified. No release approval is claimed.
+Version 1.1.0/code 2 candidate `e804871a9393ec8e564c1e8c2458a904841020debdd0e084e0b8d90134ee2123`, 1,271,121 bytes, addresses the failed physical baseline through shared parameter indices, static GPU vertex/index buffers and cached program locations. It retains every triangle and parameter bit, all mesh resolutions, every species/count and all shader/material assets. Its 15 original non-DEX manifest/resource/asset entries are byte-identical to c065. Host tests prove indexed reconstruction and 16-bit limits; actual Java formatting and 100% line/branch coverage pass (97 lines, 66 branches). The exact APK passed the fresh API34 native check below. New physical pacing is not yet verified. No release approval is claimed.
+
+
+## Indexed candidate native check
+
+The exact e804 APK passed a fresh Google TV ARM64 API34 emulator check on October 22. Dark moon jelly settled 40 seconds before an 8.026089-second 1920x1080 recording. All 243 decoded downscaled frames differed; this establishes changing captured output, not physical rendering speed. Dark moon, light nettle, purple school and Home/resume output were visually inspected and retained the accepted anatomy and material direction. No fatal runtime or GL-invalid entry appeared in the bounded log snapshot.
+
+Actual remote Preview/Back, Credits and license scrolling, and a nonpersistent bound DreamService/Back passed. All six application preferences and eight sampled OS settings matched their before/after snapshots exactly; the app stopped at Home. The [indexed native record](../art/screenshots/indexed-native.json) identifies the frozen APK and capture hashes. Physical performance, physical moving approval and release publication remain blocked until a fresh device gate passes.
 
 
 ## October 22 physical performance gate failed

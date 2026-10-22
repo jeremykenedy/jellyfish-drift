@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-22",
+  "source": "5299678",
+  "artifactSha256": "e804871a9393ec8e564c1e8c2458a904841020debdd0e084e0b8d90134ee2123",
+  "artifactBytes": 1271121,
+  "version": "1.1.0",
+  "versionCode": 2,
+  "platform": "Google TV ARM64 API34 emulator-5580",
+  "checks": [
+    "Signed in-place installation preserved six application preferences",
+    "Dark moon settled 40 seconds",
+    "Home/resume and three species output visually inspected",
+    "Remote Preview and Back",
+    "Offline Credits and license scrolling",
+    "Nonpersistent bound DreamService and Back detachment",
+    "Six application preferences and eight OS settings restored exactly; app stopped at Home"
+  ],
+  "movie": {
+    "width": 1920,
+    "height": 1080,
+    "durationSeconds": 8.026089,
+    "decodedFrames": 243,
+    "distinctDownscaledFrames": 243,
+    "sha256": "9fe1777bcd8dd7e8482b200fd1da2104f1b2780ed43ed78e09b2f02dbb96dcc7"
+  },
+  "screenshots": {
+    "actual-dream.png": "75ed18065d41198727e521470b3b5c871e026ceb8eb241b0c3591896843a0144",
+    "context-resumed.png": "af64490a37b3203cdc4fe81be71d13e13d1690ac17a86d7cd2e49170674bc0ac",
+    "credits-scrolled.png": "23fdf41b8ddde27c81902adfb5f54362cdd14946c7a27656d74574d0c6d1d9bd",
+    "credits.png": "5d9735695de9695684ca16fa18dbaa95e9f320a3ad835638c4f984a593db4aa3",
+    "moon-dark.png": "0498224758dcc5225ca44e55a1acd4e3fe2d29643ec403d0647f83de758ac797",
+    "nettle-light.png": "8b3101224f0e2671a6adc17e54b8fb2efed67d620a5ad92b4447ab53cbfff01a",
+    "purple-school.png": "0458f9e23eeb3adb21b25b03fb7ae1cd8b654102c68f05a916a2a1f502a6a3ea",
+    "settings.png": "64c4551e237efd957179a0b0cc02be81b77ee5da108ee4e186246fc6f77bf312"
+  },
+  "limits": [
+    "No physical performance measurement for this indexed candidate",
+    "Previous c065 physical worst-case result failed at 6.52930 presents per second",
+    "Captured frame counts are not physical rendering FPS",
+    "Physical moving approval and release remain pending"
+  ]
+}
