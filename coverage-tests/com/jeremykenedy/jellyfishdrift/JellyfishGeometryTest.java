@@ -6,6 +6,61 @@ import org.junit.Test;
 
 public final class JellyfishGeometryTest {
   @Test
+  public void indexedSurfacesPreserveEveryTriangleAndParameterBit() {
+    int[][] surfaces = {{0, 80, 28}, {1, 64, 64}, {1, 24, 64}, {1, 16, 64}, {2, 4, 96}};
+    for (int[] surface : surfaces) {
+      float[] original = JellyfishGeometry.surface(surface[0], surface[1], surface[2]);
+      JellyfishGeometry.IndexedSurface indexed = JellyfishGeometry.indexed(original);
+      assertEquals(original.length / 4, indexed.indices.length);
+      assertTrue(indexed.parameters.length < original.length / 2);
+      for (int vertex = 0; vertex < indexed.indices.length; vertex++) {
+        int offset = Short.toUnsignedInt(indexed.indices[vertex]) * 4;
+        for (int component = 0; component < 4; component++) {
+          assertEquals(
+              Float.floatToRawIntBits(original[vertex * 4 + component]),
+              Float.floatToRawIntBits(indexed.parameters[offset + component]));
+        }
+      }
+    }
+  }
+
+  @Test
+  public void indexingHandlesEmptySurfacesAndPreservesSignedZero() {
+    JellyfishGeometry.IndexedSurface empty = JellyfishGeometry.indexed(new float[0]);
+    assertEquals(0, empty.parameters.length);
+    assertEquals(0, empty.indices.length);
+    JellyfishGeometry.IndexedSurface zeros =
+        JellyfishGeometry.indexed(new float[] {0f, 0f, 0f, 0f, -0f, 0f, 0f, 0f});
+    assertEquals(8, zeros.parameters.length);
+    assertEquals(0, Short.toUnsignedInt(zeros.indices[0]));
+    assertEquals(1, Short.toUnsignedInt(zeros.indices[1]));
+  }
+
+  @Test
+  public void unsignedShortIndicesRetainTheFullSupportedRange() {
+    float[] vertices = uniqueVertices(65536);
+    JellyfishGeometry.IndexedSurface indexed = JellyfishGeometry.indexed(vertices);
+    assertEquals(65535, Short.toUnsignedInt(indexed.indices[65535]));
+    assertArrayEquals(vertices, indexed.parameters, 0);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void indexingRejectsAnIncompleteVertex() {
+    JellyfishGeometry.indexed(new float[3]);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void indexingRejectsAnUnsupportedVertexCount() {
+    JellyfishGeometry.indexed(uniqueVertices(65537));
+  }
+
+  private static float[] uniqueVertices(int count) {
+    float[] result = new float[count * 4];
+    for (int i = 0; i < count; i++) result[i * 4] = i;
+    return result;
+  }
+
+  @Test
   public void bellClosesAroundItsAxisWithFiniteBoundedCoordinates() {
     float[] bell = JellyfishGeometry.surface(0, 80, 28);
     assertEquals(80 * 28 * 6 * 4, bell.length);

@@ -1,5 +1,10 @@
 # Device verification
 
+## Indexed-buffer candidate
+
+Version 1.1.0/code 2 candidate `e804871a9393ec8e564c1e8c2458a904841020debdd0e084e0b8d90134ee2123`, 1,271,121 bytes, addresses the failed physical baseline through shared parameter indices, static GPU vertex/index buffers and cached program locations. It retains every triangle and parameter bit, all mesh resolutions, every species/count and all shader/material assets. Its 15 original non-DEX manifest/resource/asset entries are byte-identical to c065. Host tests prove indexed reconstruction and 16-bit limits; actual Java formatting and 100% line/branch coverage pass (97 lines, 66 branches). Native context recreation and new physical pacing are not yet verified. No release approval is claimed.
+
+
 ## October 22 physical performance gate failed
 
 The exact c065 signed APK installed on the physical AFTDEC012E/API30. Pulling back its installed APK verified the full SHA-256 and original certificate. Its signed update preserved all six app preferences. Actual remote Settings/Preview/Back, offline Credits scrolling and a dark-moon bound DreamService/Back passed. All six preferences and eight sampled OS values were restored exactly, the original Asleep state was restored, and the picker's live foreground protection and existing backup stayed intact.
