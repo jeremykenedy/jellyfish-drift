@@ -11,6 +11,8 @@ Open Jellyfish Drift from the TV launcher and use the remote to change a choice.
 | Sunlight from above | Off, on, random | Off |
 | Randomize all settings each start | Off, on | Off |
 
+The density choices draw 3, 7, 11, 17 or 25 actual animals. Movement scales the animation clock to 0.55, 1 or 1.65 times normal, including bell contractions, appendage motion and water effects. Moon jelly has a flatter bell and short fringe around four central oral arms; sea nettle has a higher russet bell and long tentacles; purple-striped jelly has a pale bell with violet bands and long trailing arms. Background changes the water lighting, and sunlight adds animated overhead rays. These are original rendered interpretations, not recorded species footage.
+
 Each choice can be randomized independently. The all-settings control selects new values for each supported setting when a new screensaver session begins. Values are chosen once per session, so the visual style remains coherent until the next activation.
 
 ## Host application settings contract

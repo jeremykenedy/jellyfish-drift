@@ -12,15 +12,15 @@ java { sourceCompatibility = JavaVersion.VERSION_1_8; targetCompatibility = Java
 
 sourceSets {
     main.java {
-        srcDirs = ['../src/com/jeremykenedy/jellyfishdrift']
-        include 'JellyfishOptions.java', 'SettingsValues.java'
+        srcDirs = ['src/com/jeremykenedy/jellyfishdrift']
+        include 'JellyfishOptions.java', 'SettingsValues.java', 'JellyfishGeometry.java'
     }
-    test.java { srcDirs = ['../coverage-tests', '../tests'] }
+    test.java { srcDirs = ['coverage-tests', 'tests'] }
 }
 
 spotless {
     java {
-        target '../src/**/*.java', '../tests/**/*.java', '../coverage-tests/**/*.java'
+        target 'src/**/*.java', 'tests/**/*.java', 'coverage-tests/**/*.java'
         googleJavaFormat('1.24.0')
     }
 }
@@ -33,11 +33,13 @@ jacocoTestCoverageVerification {
     violationRules {
         rule {
             element = 'BUNDLE'
-            limit { counter = 'LINE'; value = 'COVEREDCOUNT'; minimum = 1.0 }
-            limit { counter = 'BRANCH'; value = 'COVEREDCOUNT'; minimum = 1.0 }
+            limit { counter = 'LINE'; value = 'COVEREDRATIO'; minimum = 1.0 }
+            limit { counter = 'BRANCH'; value = 'COVEREDRATIO'; minimum = 1.0 }
         }
     }
 }
 
 check.dependsOn jacocoTestCoverageVerification
 check.dependsOn spotlessCheck
+
+layout.buildDirectory = layout.projectDirectory.dir('build/coverage-gradle')

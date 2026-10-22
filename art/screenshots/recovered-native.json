@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-22",
+  "artifactSha256": "c065f4b58a901f6d80c4c71e597d396772ad61400d0a591f17b69a9afd38b340",
+  "artifactBytes": 1267025,
+  "version": "1.1.0",
+  "versionCode": 2,
+  "platform": "Google TV ARM64 API34 emulator-5580",
+  "source": "7863dc15f198f0373d99f9450fdde5effff90d09",
+  "checks": [
+    "Exact signed APK installed",
+    "Dark moon Preview settled40seconds",
+    "Three species screenshots visually reviewed",
+    "Remote initial Preview focus Select and Back with bounded activity polling",
+    "Remote Credits route and license scrolling",
+    "Nonpersistent bound purple-striped DreamService and Back detachment",
+    "Six application preferences and five system values restored exactly; app stopped and Home"
+  ],
+  "movie": {
+    "width": 1920,
+    "height": 1080,
+    "durationSeconds": 8.048644,
+    "decodedFrames": 245,
+    "distinctDownscaledFrames": 245,
+    "sha256": "8f5306a154ccef0b8c0b74241c867125600bedefc353df17c1c5b3aa873637c5"
+  },
+  "screenshots": {
+    "actual-dream.png": "9ea2229bb558c0a552d3bf2b3d8d300594cc452d943af3277e7a51b5a4bb4292",
+    "credits-scrolled.png": "f09ff5d929c318e3b76fec757a767cc2404f40c04358e443cd19faf90b2c6829",
+    "credits.png": "f2b0c890580d5c77a12addb4c9b8ed635c15a83f04df5167ed769f56eb2ee54a",
+    "moon-dark.png": "ebbb1ca621fffad81b54328f610274c7d66150e7ba81799853c9deacb3a8b2a4",
+    "nettle-light.png": "3012510f8f4f96151818c0a1fc2ca921fd3c803ad144450464ce87987f7ca875",
+    "purple-school.png": "2b60f8d689b9776c0d00067d7f59f9cb18a42d3f57d8c40e48184dbdef3f0fbc",
+    "settings.png": "64c4551e237efd957179a0b0cc02be81b77ee5da108ee4e186246fc6f77bf312"
+  },
+  "limits": [
+    "Clean installation on this emulator, existing-package update preservation not tested in this run",
+    "No physical TV gate for this APK yet",
+    "Changing video output is not a renderingFPS benchmark",
+    "Folded oral-arm geometry remains angular in places",
+    "License scrolling checked; bottom not reached in bounded window"
+  ]
+}
