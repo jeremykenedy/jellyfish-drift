@@ -1,5 +1,14 @@
 # Device verification
 
+## October 22 physical performance gate failed
+
+The exact c065 signed APK installed on the physical AFTDEC012E/API30. Pulling back its installed APK verified the full SHA-256 and original certificate. Its signed update preserved all six app preferences. Actual remote Settings/Preview/Back, offline Credits scrolling and a dark-moon bound DreamService/Back passed. All six preferences and eight sampled OS values were restored exactly, the original Asleep state was restored, and the picker's live foreground protection and existing backup stayed intact.
+
+The 25-nettle bright-water/fast/rays-on scene settled 40 seconds before a six-second SurfaceFlinger presentation sample. It produced only 6.52930 presents/second, 38 samples, median 150.06 ms and maximum 166.68 ms intervals. This fails the physical performance gate and blocks 1.1.0 publication. An emulator recording or a green host/CI run does not override this result. The c065 candidate must not be presented as ready for release. Its physical images and movie show functional output, not acceptable pacing.
+
+A focused rendering optimization is required before another exact signed artifact is tested. The accepted visual anatomy and material direction should be preserved; no new visual feature or reduced animal-count claim is being introduced.
+
+
 ## Recovery on October 22, 2026
 
 The temporary workspace and the previously prepared 90a4 APK were removed during cleanup. The accepted source commit 7863dc15f198f0373d99f9450fdde5effff90d09 was recovered unchanged into a persistent worktree and rebuilt with the original production signing key. The new immutable signed 1.1.0/code2 APK is `c065f4b58a901f6d80c4c71e597d396772ad61400d0a591f17b69a9afd38b340`, 1,267,025 bytes.

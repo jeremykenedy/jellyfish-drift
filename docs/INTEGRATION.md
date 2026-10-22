@@ -19,7 +19,7 @@ Jellyfish Drift exposes native Android activities, an Android DreamService and a
 
 The 1.1 renderer preserves the 1.0 package, signing key, six preference keys and accepted values. An ordinary signed update preserves preferences. Host catalogs must pin an actual published release and verify its downloaded APK against the published checksum; a source branch or candidate is not a release.
 
-The intended 1.1 assets are [the signed APK](https://github.com/jeremykenedy/jellyfish-drift/releases/download/v1.1.0/jellyfish-drift.apk) and [its checksum](https://github.com/jeremykenedy/jellyfish-drift/releases/download/v1.1.0/jellyfish-drift.apk.sha256). They are unavailable until the physical gate, primary-branch checks and publication finish. The frozen APK has passed its own API 34 native routes; older deleted candidate binaries are not claimed byte-identical.
+The intended 1.1 assets are [the signed APK](https://github.com/jeremykenedy/jellyfish-drift/releases/download/v1.1.0/jellyfish-drift.apk) and [its checksum](https://github.com/jeremykenedy/jellyfish-drift/releases/download/v1.1.0/jellyfish-drift.apk.sha256). They are unavailable until the physical gate, primary-branch checks and publication finish. The c065 APK passed native and physical functional routes but failed the physical 25-nettle performance gate at 6.53 presents/second; it must not be pinned as a published release. Older deleted candidate binaries are not claimed byte-identical.
 
 ## Preferences
 
