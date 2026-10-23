@@ -8,8 +8,8 @@ ANDROID_JAR="$SDK/platforms/android-36/android.jar"
 OUT="$ROOT/build"
 KEYSTORE="${JELLYFISH_KEYSTORE:-$HOME/.android/jellyfish-drift.jks}"
 KEYPASS="${JELLYFISH_KEYPASS:-$HOME/.android/jellyfish-drift.pass}"
-VERSION_NAME="${VERSION_NAME:-1.0.0}"
-VERSION_CODE="${VERSION_CODE:-1}"
+VERSION_NAME="${VERSION_NAME:-2.0.0}"
+VERSION_CODE="${VERSION_CODE:-3}"
 
 for tool in javac keytool openssl zip; do
   command -v "$tool" >/dev/null || { echo "Missing required tool: $tool" >&2; exit 1; }
@@ -21,22 +21,16 @@ mkdir -p "$OUT" "$(dirname "$KEYSTORE")"
 rm -rf "$OUT/classes" "$OUT/dex" "$OUT/generated"
 mkdir -p "$OUT/classes" "$OUT/dex"
 
-if [[ ! -f "$KEYSTORE" ]]; then
-  [[ ! -e "$KEYPASS" ]] || { echo "Signing key is missing but its password file exists; restore the key." >&2; exit 1; }
-  (umask 077 && openssl rand -hex 24 > "$KEYPASS")
-  keytool -genkeypair -keystore "$KEYSTORE" -storepass:file "$KEYPASS" -alias jellyfish-drift \
-    -keyalg RSA -keysize 3072 -validity 10950 -dname "CN=Jellyfish Drift Release"
-  chmod 600 "$KEYSTORE"
-fi
+[[ -f "$KEYSTORE" ]] || { echo "Restore the original Jellyfish Drift signing key." >&2; exit 1; }
 [[ -s "$KEYPASS" ]] || { echo "Restore the signing-key password file." >&2; exit 1; }
 
 "$TOOLS/aapt2" compile --dir "$ROOT/res" -o "$OUT/res.zip"
 "$TOOLS/aapt2" link -o "$OUT/unsigned.apk" -I "$ANDROID_JAR" \
   --manifest "$ROOT/AndroidManifest.xml" --min-sdk-version 23 --target-sdk-version 36 \
   --version-code "$VERSION_CODE" --version-name "$VERSION_NAME" \
-  --java "$OUT/generated" "$OUT/res.zip"
+  --java "$OUT/generated" -A "$ROOT/assets" -0 mp4 "$OUT/res.zip"
 find "$ROOT/src" "$OUT/generated" -name '*.java' > "$OUT/sources.txt"
-javac -nowarn -Xlint:-options -source 8 -target 8 -bootclasspath "$ANDROID_JAR" \
+javac --release 8 -classpath "$ANDROID_JAR" \
   -d "$OUT/classes" @"$OUT/sources.txt"
 find "$OUT/classes" -name '*.class' > "$OUT/classes.txt"
 "$TOOLS/d8" --release --lib "$ANDROID_JAR" --min-api 23 --output "$OUT/dex" @"$OUT/classes.txt"

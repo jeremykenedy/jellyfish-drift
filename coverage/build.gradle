@@ -4,6 +4,8 @@ plugins {
     id 'com.diffplug.spotless' version '8.10.3'
 }
 
+layout.buildDirectory = file('coverage/build')
+
 repositories { mavenCentral() }
 
 dependencies { testImplementation 'junit:junit:4.13.2' }
@@ -12,15 +14,15 @@ java { sourceCompatibility = JavaVersion.VERSION_1_8; targetCompatibility = Java
 
 sourceSets {
     main.java {
-        srcDirs = ['../src/com/jeremykenedy/jellyfishdrift']
+        srcDirs = ['src/com/jeremykenedy/jellyfishdrift']
         include 'JellyfishOptions.java', 'SettingsValues.java'
     }
-    test.java { srcDirs = ['../coverage-tests', '../tests'] }
+    test.java { srcDirs = ['coverage-tests', 'tests'] }
 }
 
 spotless {
     java {
-        target '../src/**/*.java', '../tests/**/*.java', '../coverage-tests/**/*.java'
+        target 'src/**/*.java', 'tests/**/*.java', 'coverage-tests/**/*.java'
         googleJavaFormat('1.24.0')
     }
 }
@@ -33,8 +35,8 @@ jacocoTestCoverageVerification {
     violationRules {
         rule {
             element = 'BUNDLE'
-            limit { counter = 'LINE'; value = 'COVEREDCOUNT'; minimum = 1.0 }
-            limit { counter = 'BRANCH'; value = 'COVEREDCOUNT'; minimum = 1.0 }
+            limit { counter = 'LINE'; value = 'COVEREDRATIO'; minimum = 1.0 }
+            limit { counter = 'BRANCH'; value = 'COVEREDRATIO'; minimum = 1.0 }
         }
     }
 }

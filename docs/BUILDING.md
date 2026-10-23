@@ -12,8 +12,8 @@ Set `ANDROID_HOME` if the SDK is not at `~/Library/Android/sdk`. Then run:
 bash build.sh
 ```
 
-The APK and SHA-256 file are written to `build/`. The first local build creates a unique signing key and password under `~/.android/`. Back up both files securely; keep this key for all future signed updates. Never commit them. Set `JELLYFISH_KEYSTORE` and `JELLYFISH_KEYPASS` to use an existing protected key. CI builds use disposable runner credentials and those APKs are not production releases.
+The APK and SHA-256 file are written to `build/`. The build requires the original signing key and password under `~/.android/`. It fails if either is missing rather than generating an incompatible replacement. Back up both files securely and never commit them. Set `JELLYFISH_KEYSTORE` and `JELLYFISH_KEYPASS` to use an existing protected key. CI explicitly creates disposable runner credentials; its APKs are validation artifacts, not production updates.
 
-Use `VERSION_NAME` and `VERSION_CODE` to override the defaults for a release build. Validate the final signed APK and hash together before publishing. See [release process](RELEASING.md).
+The isolated filmed candidate defaults to `2.0.0` and version code `3`, above the previous code `2` candidates. Use `VERSION_NAME` and `VERSION_CODE` only for a deliberately versioned build. Validate the final signed APK and hash together before publishing. See [release process](RELEASING.md).
 
 To install a local development build, use `python3 install.py --serial TV_IP:5555 --apk build/jellyfish-drift.apk`. Without `--apk`, the installer downloads the latest published release and verifies its checksum.

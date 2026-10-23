@@ -1,0 +1,118 @@
+{
+  "status": "isolated candidate; production-native and physical acceptance pending",
+  "sourcePrimary": "c649c6989453665e1ad608f937d1e50c444cafb6",
+  "candidateVersion": "2.0.0",
+  "candidateCode": 3,
+  "effectiveSettings": {
+    "background": {
+      "dark": "Deep ocean / Crossota",
+      "light": "Blue aquarium / Aurelia labiata",
+      "random": "Random actual recording"
+    },
+    "motion": {
+      "slow": 0.9,
+      "normal": 1.0,
+      "fast": 1.25,
+      "random": "Random playback speed"
+    },
+    "randomize_all": "Only scene and speed"
+  },
+  "inactivePreservedKeys": [
+    "density",
+    "species",
+    "light_rays"
+  ],
+  "media": [
+    {
+      "scene": "aurelia",
+      "source": "https://commons.wikimedia.org/wiki/File:Aurelia_labiata_swimming.webm",
+      "author": "Eric Polk",
+      "license": "CC-BY-SA-4.0",
+      "sourceIntervalSeconds": [
+        2,
+        19
+      ],
+      "loopSeconds": 16,
+      "adaptations": [
+        "silent H26430fps",
+        "1s editorial loop dissolve",
+        "720p fallback"
+      ],
+      "qualityLimits": [
+        "16s repetition",
+        "editorial overlap"
+      ]
+    },
+    {
+      "scene": "crossota",
+      "source": "https://oceanexplorer.noaa.gov/multimedia/video-playlist-best-jellyfish/",
+      "credit": "NOAA Ocean Exploration, 2016 Deepwater Exploration of the Marianas",
+      "license": "NOAA public domain; see source notice",
+      "sourceIntervalSeconds": [
+        8,
+        28.02
+      ],
+      "loopSeconds": 19.052367,
+      "adaptations": [
+        "bwdif send_frame parity=tff deint=all",
+        "silent H264",
+        "1s editorial loop dissolve",
+        "720p fallback"
+      ],
+      "idetBefore": {
+        "TFF": 599,
+        "BFF": 0,
+        "progressive": 0,
+        "undetermined": 1
+      },
+      "idetAfter": {
+        "TFF": 0,
+        "BFF": 0,
+        "progressive": 571,
+        "undetermined": 0
+      },
+      "qualityLimits": [
+        "source view dissolve",
+        "residual fine-line artifacts",
+        "corrected derivative moving review pending"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/CC-BY-SA-4.0.txt",
+      "bytes": 20138,
+      "sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5"
+    },
+    {
+      "path": "assets/LICENSE.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "assets/NOTICE.txt",
+      "bytes": 2291,
+      "sha256": "3189f82b67c3710c94dc979c27c19b32e41b4057367eb47a15da61910751efe5"
+    },
+    {
+      "path": "assets/aurelia-1080.mp4",
+      "bytes": 8796475,
+      "sha256": "b2497a42c8b34a9050c612fddfdf2b017d586df186fcb3774057d16912eb40b9"
+    },
+    {
+      "path": "assets/aurelia-720.mp4",
+      "bytes": 3250624,
+      "sha256": "a1996edd48b985dc0e3ff57999fa8bf34dcf075ba0fa9723ed591f787b25a91a"
+    },
+    {
+      "path": "assets/crossota-1080.mp4",
+      "bytes": 16872826,
+      "sha256": "2dea9f55f54d341b94fcb557641e8e4e8e3c3d1ea52053d01249354eed26d346"
+    },
+    {
+      "path": "assets/crossota-720.mp4",
+      "bytes": 6264597,
+      "sha256": "47cba9cd184f1d41d3f6a6168f7a4c69dcc39edc269a2ac9b5ea7e0ee6a16c54"
+    }
+  ]
+}
