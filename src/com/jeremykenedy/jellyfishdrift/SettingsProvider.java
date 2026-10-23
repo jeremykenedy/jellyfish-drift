@@ -48,8 +48,7 @@ public final class SettingsProvider extends ContentProvider {
     SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
     if ("randomize_all".equals(key)) editor.putBoolean(key, Boolean.parseBoolean(value));
     else editor.putString(key, value);
-    editor.apply();
-    return 1;
+    return editor.commit() ? 1 : 0;
   }
 
   private Cursor schemaCursor() {

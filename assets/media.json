@@ -2,7 +2,7 @@
   "status": "isolated candidate; production-native and physical acceptance pending",
   "sourcePrimary": "c649c6989453665e1ad608f937d1e50c444cafb6",
   "candidateVersion": "2.0.0",
-  "candidateCode": 3,
+  "candidateCode": 4,
   "effectiveSettings": {
     "background": {
       "dark": "Deep ocean / Crossota",
