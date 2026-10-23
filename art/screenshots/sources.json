@@ -1,72 +1,80 @@
 {
-  "candidate": "3.0.0/code6",
-  "apkSha256": "eb5f6e9a5011b288917389daa9a5f4b23bbaba851820e858e251af4647a2c99e",
-  "capturedAt": "2026-10-23",
-  "platform": "Android TV API 34 emulator",
+  "candidate": "3.0.0/code7",
+  "apkSha256": "2e3a8e5ad912b40bb614568e83c0f752b26e5be3bf9e8f06bb02e917063e3cb2",
+  "capturedAtUTC": "2026-10-23",
+  "platform": "Physical Fire TV AFTDEC012E API30",
   "resolution": [
     1920,
     1080
   ],
-  "captureMethod": "adb exec-out screencap -p from native Settings and Preview",
-  "actualBoundDreamClaim": false,
-  "physicalPerformanceClaim": false,
-  "clock": "Default off, independent of randomize_all; on-start/drift are the same Preview 20 seconds apart",
+  "captureMethod": "adb exec-out screencap -p from current native Settings, Preview and bound non-test Dream",
   "images": [
     {
-      "file": "clock-off.png",
-      "description": "Clock off",
-      "sha256": "64ee2aafee6694f66685cab97a2247a4cd1f6bd158a8852f836a7dfbaa1339c2",
+      "file": "physical-classic-clock-off.png",
+      "description": "Dark water, three moon jellyfish, clock off",
+      "sha256": "18c2334c2bf93250947a68f6201733da8c6768543e4f4e2f63dd65d9fc3ef39d",
       "width": 1920,
-      "height": 1080
+      "height": 1080,
+      "actualBoundNonTestDream": true
     },
     {
-      "file": "clock-on-start.png",
-      "description": "Clock on",
-      "sha256": "98aaa401d31422249f341fba1336af12969175a606245258feba3d79ffe5ee14",
+      "file": "physical-classic-clock-start.png",
+      "description": "Bright water, schools, clock on",
+      "sha256": "ffd6cb27a8375bf517509a5d62a2ef096297b040026f2efc4ce88bc72bfa4147",
       "width": 1920,
-      "height": 1080
+      "height": 1080,
+      "actualBoundNonTestDream": true
     },
     {
-      "file": "settings.png",
-      "description": "Native settings",
-      "sha256": "126d95d917b82274f339d1f4a35e39e487191e2ae9250579ba7fbbe0f10947af",
+      "file": "physical-classic-clock-drift.png",
+      "description": "Same Dream with later clock position",
+      "sha256": "911a91fdf142f93418837f90ba1674a0bcdbef2bd0f80b79c4e9844119e59105",
       "width": 1920,
-      "height": 1080
+      "height": 1080,
+      "actualBoundNonTestDream": true
     },
     {
-      "file": "clock-on-drift.png",
-      "description": "Clock after 20 seconds of drift",
-      "sha256": "1767854c97e8fa7706251c9303128df922edd70f146aa996f597e9deb301020d",
+      "file": "physical-settings.png",
+      "description": "Native settings with Show clock focused",
+      "sha256": "0c42ef1712cafe55b10e250adb834b66a4c3bdc7223a4e01e36ff76a4b4ad6ee",
       "width": 1920,
-      "height": 1080
+      "height": 1080,
+      "actualBoundNonTestDream": false
     },
     {
-      "file": "clock-on-random.png",
-      "description": "Clock on with randomized scene",
-      "sha256": "7324fb2dff13b746a84fbc949d4e22c727104302f8e3f9f0ee8ce16fa045bcfc",
+      "file": "physical-credits.png",
+      "description": "Offline Credits",
+      "sha256": "d856e476bc3d2a8bedf9194f1f46b6bb0fdcbc197eca41a6ecd44aefdb64fd57",
       "width": 1920,
-      "height": 1080
+      "height": 1080,
+      "actualBoundNonTestDream": false
     },
     {
-      "file": "clock-off-random.png",
-      "description": "Clock off with randomized scene",
-      "sha256": "9ca066ec810bf5befc686294d60f5133e8a27ae8e241509d10c5630033652008",
+      "file": "physical-licenses-scrolled.png",
+      "description": "Scrolled Apache license",
+      "sha256": "980145668db3fca166deaffcfd5c267fb2c1e822862a60195e0f4f404410bca5",
       "width": 1920,
-      "height": 1080
+      "height": 1080,
+      "actualBoundNonTestDream": false
     },
     {
-      "file": "credits.png",
-      "description": "Offline credits",
-      "sha256": "83673af99285b795b6016849341c98446f393bfa589f66ada325982810091cca",
+      "file": "physical-preview.png",
+      "description": "Native Preview before Home",
+      "sha256": "7c8e2aab26f4df474c40e8bf9538ad78adf258083161f241bbf8b0a988843c84",
       "width": 1920,
-      "height": 1080
+      "height": 1080,
+      "actualBoundNonTestDream": false
     },
     {
-      "file": "licenses-scrolled.png",
-      "description": "Scrollable licenses",
-      "sha256": "41bd8feb6e033e680d2c7cdf3407d3b8773158699aca8309cccd22343d75ab16",
+      "file": "physical-preview-resumed.png",
+      "description": "Native Preview resumed after Home",
+      "sha256": "3a0676c7b1abb511486a93fe46b6d237739cbf201e2f79d4d5d28fb0f5ab700f",
       "width": 1920,
-      "height": 1080
+      "height": 1080,
+      "actualBoundNonTestDream": false
     }
-  ]
+  ],
+  "clock": "Default off and independent of randomize_all; early/final physical ON Dream captures demonstrate slow drift",
+  "presentationScope": "Three separate settled SurfaceFlinger app-layer windows per preset, no screenrecord: minimum29.9987 OFF and30.4872 ON; clock ON includes overlay redraws, not a continuous full-duration trace",
+  "sourceArtwork": "Original public v1.0.0 bundled artwork unchanged"
 }

@@ -102,7 +102,7 @@ Open Jellyfish Drift to choose water background, amount, movement, species, ligh
 ## Screenshots
 
 <table>
-<tr><td width="33%"><img src="art/screenshots/clock-off.png" alt="Clock off"><br>Clock off</td><td width="33%"><img src="art/screenshots/clock-on-start.png" alt="Clock on"><br>Clock on</td><td width="33%"><img src="art/screenshots/settings.png" alt="Native settings"><br>Native settings</td></tr>
+<tr><td width="33%"><img src="art/screenshots/physical-classic-clock-off.png" alt="Clock off"><br>Clock off</td><td width="33%"><img src="art/screenshots/physical-classic-clock-start.png" alt="Clock on"><br>Clock on</td><td width="33%"><img src="art/screenshots/physical-settings.png" alt="Native settings"><br>Native settings</td></tr>
 </table>
 
 Current native emulator captures. See the [full gallery and provenance](docs/SCREENSHOTS.md). Physical device and bound Dream gates for this clock candidate remain pending.

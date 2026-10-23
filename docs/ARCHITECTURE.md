@@ -4,6 +4,8 @@ Jellyfish Drift is a dependency-free Android application with one DreamService a
 
 The DreamService creates the scene when attached, starts its frame loop only while dreaming, and stops callbacks when the dream stops or detaches. The preview activity uses the same renderer. Preferences are local Android shared preferences. The exported settings provider offers a small, validated contract to host applications so a TV UI can discover and edit supported choices.
 
-The application declares no network permission or third-party runtime libraries. Build outputs and release signing credentials stay outside version control. Pure option resolution and value validation are isolated so host tests can measure their line and branch coverage. Android lifecycle, graphics and TV behavior require emulator or device verification.
+The application declares no network permission or third-party runtime libraries. Build outputs and release signing credentials stay outside version control. Pure option resolution, value validation, and frame pacing are isolated so host tests can measure their line and branch coverage. Android lifecycle, graphics and TV behavior require emulator or device verification.
 
 The optional clock wraps the existing scene only when `show_clock` is enabled. Clock off returns the original scene view without creating an overlay. The local-time label follows the device time format, uses a readable shadow, updates once a second, and slowly changes position on a ten-minute cycle. Random scene selection never reads or changes this boolean preference. No clock or date is baked into scene assets.
+
+The classic Canvas scene uses display callbacks with an intentional 30 FPS drawing cap. Deadlines advance independently of draw duration. Drawing uses elapsed uptime for movement and deformation, so a skipped display frame does not slow or speed the animation. Stop removes the callback; start resets its deadline.
