@@ -1,28 +1,26 @@
 <p align="center">
-    <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="art/banner-dark.svg">
-        <source media="(prefers-color-scheme: light)" srcset="art/banner-light.svg">
-        <img src="art/banner-light.svg" alt="Jellyfish Drift, animated TV screensaver with no ads, analytics, or tracking" width="800">
-    </picture>
+  <a href="https://github.com/jeremykenedy/jellyfish-drift#gh-light-mode-only"><picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="art/banner-mobile-still-light.06fdb2435437.svg"><source media="(prefers-reduced-motion: reduce)" srcset="art/banner-still-light.180e4f37264f.svg"><source media="(max-width: 600px)" srcset="art/banner-mobile-light.3c05d0ee479f.svg"><img src="art/banner-light.ed9fad3d48c0.svg#gh-light-mode-only" alt="Jellyfish Drift" width="800"></picture></a>
+  <a href="https://github.com/jeremykenedy/jellyfish-drift#gh-dark-mode-only"><picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="art/banner-mobile-still-dark.657615bff5d9.svg"><source media="(prefers-reduced-motion: reduce)" srcset="art/banner-still-dark.f91bb9482be9.svg"><source media="(max-width: 600px)" srcset="art/banner-mobile-dark.3d5bdbb5f396.svg"><img src="art/banner-dark.207dad6e5b97.svg#gh-dark-mode-only" alt="Jellyfish Drift" width="800"></picture></a>
 </p>
 
-<p align="center">A continuously animated jellyfish screensaver for Fire TV, Android TV, and Google TV.</p>
+<p align="center">Real filmed jellyfish scenes for compatible TV screensavers, played entirely offline.</p>
 
 <p align="center">
-    <a href="https://github.com/jeremykenedy/jellyfish-drift/releases"><img src="https://img.shields.io/github/v/release/jeremykenedy/jellyfish-drift?label=latest%20release" alt="Latest release"></a>
-    <a href="https://github.com/jeremykenedy/jellyfish-drift/releases"><img src="https://img.shields.io/github/downloads/jeremykenedy/jellyfish-drift/total" alt="GitHub release downloads"></a>
-    <a href="https://github.com/jeremykenedy/jellyfish-drift/actions/workflows/ci.yml"><img src="https://github.com/jeremykenedy/jellyfish-drift/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-    <a href="https://github.com/jeremykenedy/jellyfish-drift/actions/workflows/style.yml"><img src="https://github.com/jeremykenedy/jellyfish-drift/actions/workflows/style.yml/badge.svg" alt="Code style"></a>
-    <a href="https://github.com/jeremykenedy/jellyfish-drift/actions/workflows/docs.yml"><img src="https://github.com/jeremykenedy/jellyfish-drift/actions/workflows/docs.yml/badge.svg" alt="Documentation"></a>
-    <a href="https://github.com/jeremykenedy/jellyfish-drift/actions/workflows/security.yml"><img src="https://github.com/jeremykenedy/jellyfish-drift/actions/workflows/security.yml/badge.svg" alt="Security checks"></a>
-    <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache--2.0-blue.svg" alt="Apache-2.0 license"></a>
-    <a href="https://github.com/jeremykenedy"><img src="https://img.shields.io/github/followers/jeremykenedy?label=Follow&style=social" alt="Follow Jeremy Kenedy on GitHub"></a>
-    <a href="https://github.com/jeremykenedy/jellyfish-drift" title="Open the repository and click Star"><img src="https://img.shields.io/badge/Star-this%20repo-yellow?logo=github&style=social" alt="Star this repo"></a>
-    <a href="https://github.com/jeremykenedy/jellyfish-drift/stargazers"><img src="https://img.shields.io/github/stars/jeremykenedy/jellyfish-drift?style=social" alt="Star Jellyfish Drift on GitHub"></a>
-    <a href="https://github.com/sponsors/jeremykenedy"><img src="https://img.shields.io/badge/Sponsor-jeremykenedy-EA4AAA?logo=githubsponsors&logoColor=white" alt="Sponsor Jeremy Kenedy"></a>
+  <a href="https://github.com/jeremykenedy/jellyfish-drift/releases"><img src="https://img.shields.io/github/downloads/jeremykenedy/jellyfish-drift/total" alt="GitHub release downloads"></a>
+  <a href="https://github.com/jeremykenedy/jellyfish-drift/releases"><img src="https://img.shields.io/github/v/release/jeremykenedy/jellyfish-drift?label=latest%20release" alt="Latest release"></a>
+  <a href="https://github.com/jeremykenedy/jellyfish-drift/actions/workflows/ci.yml"><img src="https://github.com/jeremykenedy/jellyfish-drift/actions/workflows/ci.yml/badge.svg" alt="Build and tests"></a>
+  <a href="https://github.com/jeremykenedy/jellyfish-drift/actions/workflows/style.yml"><img src="https://github.com/jeremykenedy/jellyfish-drift/actions/workflows/style.yml/badge.svg" alt="Code style"></a>
+  <a href="https://github.com/jeremykenedy/jellyfish-drift/actions/workflows/docs.yml"><img src="https://github.com/jeremykenedy/jellyfish-drift/actions/workflows/docs.yml/badge.svg" alt="Documentation"></a>
+  <a href="https://github.com/jeremykenedy/jellyfish-drift/actions/workflows/security.yml"><img src="https://github.com/jeremykenedy/jellyfish-drift/actions/workflows/security.yml/badge.svg" alt="Security checks"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache--2.0-blue.svg" alt="Application code: Apache-2.0"></a>
+</p>
+<p align="center">
+  <a href="https://github.com/jeremykenedy"><img src="https://img.shields.io/github/followers/jeremykenedy?label=Follow&style=social" alt="Follow Jeremy Kenedy"></a>
+  <a href="https://github.com/jeremykenedy/jellyfish-drift"><img src="https://img.shields.io/github/stars/jeremykenedy/jellyfish-drift?label=Star&style=social" alt="Star Jellyfish Drift"></a>
+  <a href="https://github.com/sponsors/jeremykenedy"><img src="https://img.shields.io/badge/Sponsor-jeremykenedy-EA4AAA?logo=githubsponsors&logoColor=white" alt="Sponsor Jeremy Kenedy"></a>
 </p>
 
-<p align="center">Show some love by starring this repository on GitHub.</p>
+**2.0 filmed candidate:** final physical production Dream and presentation checks are pending. The latest published release may use the previous renderer. See the [verification record](docs/VERIFICATION.md).
 
 ## Table of contents
 
@@ -34,46 +32,54 @@
 - [Screenshots](#screenshots)
 - [Building and testing](#building-and-testing)
 - [Documentation](#documentation)
-- [Release notes](#release-notes)
 - [License](#license)
 
 ## Privacy
 
-The screensaver requests no network permission and includes no advertising, analytics, telemetry, crash reporting, or tracking code. It makes no network requests. When you run the standalone installer, it contacts GitHub only to download the latest release APK and its checksum; it does not send device or usage data.
+Playback uses bundled files, with no network permission, advertisements, analytics, or tracking. The optional command-line installer contacts GitHub to download published release files and verify their checksum.
 
 ## Features
 
-- Animated jellyfish with translucent bells, pulsing motion, trailing tentacles, and drifting particles.
-- Deep-water and bright open-water backgrounds.
-- Jellyfish species, density, movement speed, and top-down light shimmer controls.
-- Per-setting random selection and an option to randomize all settings each time the screensaver starts.
-- D-pad-friendly settings that can be discovered by screensaver host applications.
-- Android DreamService integration for compatible TV devices.
+| Feature | What it does | Details |
+| --- | --- | --- |
+| Real recordings | Blue aquarium Aurelia and Deep ocean Crossota scenes | [Scenes and limitations](docs/CONFIGURATION.md) |
+| Playback controls | 0.9x, recorded speed, 1.25x, or random scene and speed | [Settings](docs/CONFIGURATION.md) |
+| Offline playback | Silent 1080p H264 with a 720p fallback | [Architecture](docs/ARCHITECTURE.md) |
+| Native TV settings | Remote controls, Preview, and offline licenses | [Current gallery](docs/SCREENSHOTS.md) |
+| DreamService | The same scene player in Preview and the Android screensaver service | [Verified behavior](docs/VERIFICATION.md) |
+
+The recordings repeat every 16 or approximately 19 seconds, with editorial dissolves. Animal count, species, lighting, and camera movement come from each recording. Legacy density, species, and light-ray values remain stored but do not affect filmed playback.
 
 ## Requirements
 
-- Android 6.0 (API 23) or later.
-- A device that exposes Android's DreamService screensaver settings.
-- Android SDK platform 36 and build-tools 36.0.0 to build from source.
+- Android 6.0 (API 23) or later on a compatible TV device.
+- A system or host application that supports Android DreamService screensavers.
+- ADB access from a computer when sideloading.
 
-Fire TV, Android TV, and Google TV behavior is listed in [device verification](docs/VERIFICATION.md) only after it has been tested on each target.
+Physical Google TV support, sustained thermal behavior, and native 4K source detail are not established. See [platform evidence](docs/VERIFICATION.md).
 
 ## Installation
 
-Connect the TV with ADB, then run `python3 install.py --serial TV_IP:5555`. The installer downloads the latest signed release, verifies its published SHA-256, and installs or updates the app. Select Jellyfish Drift afterward in the TV's screensaver settings. Installation, local builds, and removal are covered in [installation](docs/INSTALLATION.md).
+For the **published release**, connect the TV with ADB and run:
+
+```bash
+python3 install.py --serial TV_IP:5555
+```
+
+The installer verifies the downloaded APK against its release checksum and updates the existing package. It does not automatically select a screensaver. The unreleased 2.0 candidate requires a [local build](docs/BUILDING.md). See [installation and removal](docs/INSTALLATION.md).
 
 ## Configuration
 
-Open Jellyfish Drift from the TV launcher to adjust its settings. The app stores preferences locally. See [configuration](docs/CONFIGURATION.md) for every option and its available values.
+Open Jellyfish Drift from the TV launcher to choose a recording or playback speed, watch Preview, or read Credits and licenses. Changes apply when the next view starts. [Configuration](docs/CONFIGURATION.md) documents all three effective controls and preservation of the six legacy raw preference values.
 
 ## Screenshots
 
-<p align="center">
-    <img src="docs/screenshots/jellyfish-preview-android-tv.png" alt="Animated moon jellyfish drifting across deep water on an Android TV screen" width="49%">
-    <img src="docs/screenshots/jellyfish-light-preview.png" alt="Animated moon jellyfish over light water with the sunlight option enabled on a Fire TV" width="49%">
-</p>
+<table>
+<tr><td><img src="art/screenshots/blue-aquarium-native.png" alt="Actual 2.0 native Preview of filmed Aurelia in blue aquarium water" width="100%"></td><td><img src="art/screenshots/deep-ocean-native.png" alt="Actual 2.0 native Preview of filmed Crossota in deep ocean water" width="100%"></td><td><img src="art/screenshots/settings-native.png" alt="Actual native scene and playback speed settings" width="100%"></td></tr>
+<tr><td>Blue aquarium</td><td>Deep ocean</td><td>Native settings</td></tr>
+</table>
 
-The dark preview was captured from the running app on an Android TV emulator. The light preview and [settings screen](docs/screenshots/settings-fire-tv.png) were captured on a Fire TV. The Fire TV DreamService capture is included in [device verification](docs/VERIFICATION.md).
+Current Android TV API 34 emulator captures of the signed 2.0 candidate. These are native Preview images, not physical Fire TV or 4K evidence. The [complete gallery](docs/SCREENSHOTS.md) includes credits, speed choices, and resumed playback.
 
 ## Building and testing
 
@@ -84,12 +90,13 @@ bash scripts/test-python-coverage.sh
 bash scripts/test-coverage.sh
 ```
 
-The build uses the Android SDK and JDK without third-party runtime dependencies. See [building](docs/BUILDING.md), [testing](docs/TESTING.md), and [architecture](docs/ARCHITECTURE.md).
+The build requires Android SDK platform 36, build-tools 36.0.0, JDK 17 or later, and the original protected signing key. It does not silently generate a replacement production key. See [building](docs/BUILDING.md) and [testing](docs/TESTING.md).
 
 ## Documentation
 
+- [Configuration and migration](docs/CONFIGURATION.md)
+- [Screenshots](docs/SCREENSHOTS.md)
 - [Installation, update, and removal](docs/INSTALLATION.md)
-- [Configuration](docs/CONFIGURATION.md)
 - [Building from source](docs/BUILDING.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Testing and coverage](docs/TESTING.md)
@@ -97,13 +104,8 @@ The build uses the Android SDK and JDK without third-party runtime dependencies.
 - [CI](docs/CI.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 - [Release process](docs/RELEASING.md)
-
-## Release notes
-
-- [Version 1.0.0](docs/releases/v1.0.0.md)
-
-Show some love by starring this repository on GitHub: [Star Jellyfish Drift](https://github.com/jeremykenedy/jellyfish-drift/stargazers).
+- [Historical version 1.0.0 notes](docs/releases/v1.0.0.md)
 
 ## License
 
-Jellyfish Drift is licensed under the [Apache License, Version 2.0](LICENSE). See [NOTICE](NOTICE) for project notices.
+Application code is licensed under the [Apache License, Version 2.0](LICENSE). Filmed media uses separate source terms: Aurelia footage and derived images are CC BY-SA 4.0; the credited NOAA footage is public-domain material. See [media notices](assets/NOTICE.txt), the [CC BY-SA license](assets/CC-BY-SA-4.0.txt), and [project notices](NOTICE). The same notices are available offline in settings.
