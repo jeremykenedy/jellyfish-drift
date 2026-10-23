@@ -1,6 +1,6 @@
 # Screenshots
 
-Current 3.0.0/code6 native captures from an Android TV API 34 emulator at 1920 x 1080, October 22, 2026 (Pacific). These show Settings and Preview, not an actual bound Dream or physical performance proof.
+Reference 3.0.0/code6 native captures from an Android TV API 34 emulator at 1920 x 1080, October 22, 2026 (Pacific). These show Settings and Preview, not an actual bound Dream or current code 7 physical performance proof. Code 7 captures are pending its scheduling retest.
 
 <table>
 <tr><td width="33%"><img src="../art/screenshots/clock-off.png" alt="Clock off"><br>Clock off</td><td width="33%"><img src="../art/screenshots/clock-on-start.png" alt="Clock on"><br>Clock on</td><td width="33%"><img src="../art/screenshots/settings.png" alt="Native settings"><br>Native settings</td></tr>

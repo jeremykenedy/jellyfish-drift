@@ -11,6 +11,7 @@ import android.graphics.Paint;
 import android.graphics.Shader;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
+import android.view.Choreographer;
 import android.view.View;
 import java.util.Random;
 
@@ -29,6 +30,8 @@ final class JellyfishSceneView extends View {
   private Jelly[] jellyfish;
   private long startedAt;
   private boolean running;
+  private final FramePacer framePacer = new FramePacer();
+  private final Choreographer choreographer = Choreographer.getInstance();
 
   JellyfishSceneView(Context context) {
     super(context);
@@ -48,13 +51,14 @@ final class JellyfishSceneView extends View {
     if (!running) {
       running = true;
       startedAt = SystemClock.uptimeMillis();
-      postInvalidateOnAnimation();
+      framePacer.reset();
+      choreographer.postFrameCallback(frameCallback);
     }
   }
 
   void stop() {
     running = false;
-    removeCallbacks(invalidator);
+    choreographer.removeFrameCallback(frameCallback);
   }
 
   @Override
@@ -65,7 +69,6 @@ final class JellyfishSceneView extends View {
     drawBackground(canvas, time);
     drawParticles(canvas, time);
     for (int i = 0; i < jellyfish.length; i++) drawJellyfish(canvas, jellyfish[i], time);
-    if (running) postDelayed(invalidator, 33L);
   }
 
   @Override
@@ -98,11 +101,14 @@ final class JellyfishSceneView extends View {
             Shader.TileMode.CLAMP);
   }
 
-  private final Runnable invalidator =
-      new Runnable() {
+  private final Choreographer.FrameCallback frameCallback =
+      new Choreographer.FrameCallback() {
         @Override
-        public void run() {
-          if (running) invalidate();
+        public void doFrame(long frameTimeNanos) {
+          if (running) {
+            if (framePacer.shouldDraw(frameTimeNanos)) invalidate();
+            choreographer.postFrameCallback(this);
+          }
         }
       };
 

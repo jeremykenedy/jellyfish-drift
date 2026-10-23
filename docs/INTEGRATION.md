@@ -12,7 +12,7 @@ Keep the original `jellyfish-drift` registration and Android package. Version 3 
 | Preview | `com.jeremykenedy.jellyfishdrift/.PreviewActivity` |
 | Assets | `jellyfish-drift.apk`, `jellyfish-drift.apk.sha256` |
 | Provider | `com.jeremykenedy.jellyfishdrift.settings` |
-| Restoration version | 3.0.0, Android code 6 |
+| Restoration version | 3.0.0, Android code 7 |
 
 All six original schema rows are effective: background, density, motion, species, light_rays, randomize_all. Use current classic captures for its preview, keeping V2 footage under the new entry. Existing v2.0.0 tags remain immutable, but must not be pinned as the classic restoration. Verify actual public release bytes, checksum, package, and original signer before updating host metadata.
 
