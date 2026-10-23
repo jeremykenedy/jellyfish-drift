@@ -18,7 +18,7 @@ public final class PreviewActivity extends Activity {
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                 | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
     scene = new JellyfishSceneView(this);
-    setContentView(scene);
+    setContentView(JellyfishClock.wrap(this, scene));
   }
 
   @Override

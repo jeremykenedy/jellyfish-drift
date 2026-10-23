@@ -1,50 +1,72 @@
 {
+  "candidate": "3.0.0/code6",
+  "apkSha256": "eb5f6e9a5011b288917389daa9a5f4b23bbaba851820e858e251af4647a2c99e",
   "capturedAt": "2026-10-23",
   "platform": "Android TV API 34 emulator",
   "resolution": [
     1920,
     1080
   ],
-  "candidate": "3.0.0/code5",
-  "apkSha256": "6dccbf12da0257c8263e811e999ddc2704b3b05fb81df361bdaddb3312b22dee",
-  "captureMethod": "adb exec-out screencap -p after native interface settled",
-  "route": "Native Preview and Settings; not an actual bound Dream",
+  "captureMethod": "adb exec-out screencap -p from native Settings and Preview",
+  "actualBoundDreamClaim": false,
+  "physicalPerformanceClaim": false,
+  "clock": "Default off, independent of randomize_all; on-start/drift are the same Preview 20 seconds apart",
   "images": [
     {
-      "file": "classic-dark-preview.png",
-      "sha256": "538749d490cea59d885ed3c822ddfe0af6123425cb474cf2b61d7efa138e53a0",
-      "description": "Deep water, original moon-jelly artwork",
+      "file": "clock-off.png",
+      "description": "Clock off",
+      "sha256": "64ee2aafee6694f66685cab97a2247a4cd1f6bd158a8852f836a7dfbaa1339c2",
       "width": 1920,
       "height": 1080
     },
     {
-      "file": "classic-light-preview.png",
-      "sha256": "27e75f1735a0cc3a93e2c029905d6a8e007ab44a4f89f2f260a23ed43fc4e35e",
-      "description": "Sunlit water, original sea-nettle artwork",
+      "file": "clock-on-start.png",
+      "description": "Clock on",
+      "sha256": "98aaa401d31422249f341fba1336af12969175a606245258feba3d79ffe5ee14",
       "width": 1920,
       "height": 1080
     },
     {
-      "file": "classic-settings.png",
-      "sha256": "72aae4e4733716cfd84159289fa4984389007378549e61d70a9f09ca7ab9cd1f",
-      "description": "Six original settings",
+      "file": "settings.png",
+      "description": "Native settings",
+      "sha256": "126d95d917b82274f339d1f4a35e39e487191e2ae9250579ba7fbbe0f10947af",
       "width": 1920,
       "height": 1080
     },
     {
-      "file": "classic-credits.png",
-      "sha256": "a32a89cf3337f4e1e0af289aafd882572d1a025651a32a0b3596e1e4d1cded7c",
-      "description": "Offline attribution",
+      "file": "clock-on-drift.png",
+      "description": "Clock after 20 seconds of drift",
+      "sha256": "1767854c97e8fa7706251c9303128df922edd70f146aa996f597e9deb301020d",
       "width": 1920,
       "height": 1080
     },
     {
-      "file": "classic-licenses-scrolled.png",
-      "sha256": "3ba107393b3d6577dd4088e3e38ca1571983224932e2bcbeb416daaac3bf0596",
-      "description": "Scrollable Apache license",
+      "file": "clock-on-random.png",
+      "description": "Clock on with randomized scene",
+      "sha256": "7324fb2dff13b746a84fbc949d4e22c727104302f8e3f9f0ee8ce16fa045bcfc",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "file": "clock-off-random.png",
+      "description": "Clock off with randomized scene",
+      "sha256": "9ca066ec810bf5befc686294d60f5133e8a27ae8e241509d10c5630033652008",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "file": "credits.png",
+      "description": "Offline credits",
+      "sha256": "83673af99285b795b6016849341c98446f393bfa589f66ada325982810091cca",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "file": "licenses-scrolled.png",
+      "description": "Scrollable licenses",
+      "sha256": "41bd8feb6e033e680d2c7cdf3407d3b8773158699aca8309cccd22343d75ab16",
       "width": 1920,
       "height": 1080
     }
-  ],
-  "physicalPerformanceClaim": false
+  ]
 }

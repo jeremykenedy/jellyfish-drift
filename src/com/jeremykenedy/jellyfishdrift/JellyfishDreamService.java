@@ -12,7 +12,7 @@ public final class JellyfishDreamService extends DreamService {
     setFullscreen(true);
     setScreenBright(true);
     scene = new JellyfishSceneView(this);
-    setContentView(scene);
+    setContentView(JellyfishClock.wrap(this, scene));
   }
 
   @Override

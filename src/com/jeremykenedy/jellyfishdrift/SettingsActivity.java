@@ -77,6 +77,13 @@ public final class SettingsActivity extends Activity {
         new String[] {"off", "on", "random"},
         new String[] {"Off", "On", "Random"},
         "off");
+    CheckBox clock = new CheckBox(this);
+    clock.setText("Show clock");
+    clock.setTextSize(18);
+    clock.setChecked(preferences.getBoolean("show_clock", false));
+    clock.setOnCheckedChangeListener(
+        (button, checked) -> preferences.edit().putBoolean("show_clock", checked).apply());
+    content.addView(clock);
     CheckBox randomize = new CheckBox(this);
     randomize.setText("Randomize all settings each time the screensaver starts");
     randomize.setTextSize(18);

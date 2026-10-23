@@ -8,6 +8,7 @@ public final class JellyfishOptionsTest {
     verifyMotionAndSpeciesSettings();
     verifyExplicitAndRandomSelections();
     verifySettingsProviderValues();
+    verifyOptionalClock();
     System.out.println("Jellyfish settings tests passed.");
   }
 
@@ -115,6 +116,12 @@ public final class JellyfishOptionsTest {
     check(SettingsValues.isSupported("randomize_all", "true"), "randomize all accepted");
     check(SettingsValues.isSupported("randomize_all", "false"), "randomize toggle accepted");
     check(!SettingsValues.isSupported("unknown", "value"), "unknown key rejected");
+  }
+
+  private static void verifyOptionalClock() {
+    check(SettingsValues.isSupported("show_clock", "true"), "clock opt-in accepted");
+    check(SettingsValues.isSupported("show_clock", "false"), "clock opt-out accepted");
+    check(!SettingsValues.isSupported("show_clock", "on"), "ambiguous clock value rejected");
   }
 
   private static void check(boolean result, String message) {
