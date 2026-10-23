@@ -29,4 +29,4 @@ python3 tests/native_provider_persistence.py --serial emulator-5580 --cycles 6 -
 
 The helper changes only Jellyfish Drift's visual preferences and force-stops its process. It tests write-then-process-death and confirmed-process-death-then-write, compares all six raw saved values, captures command responses, and restores the original six values in cleanup. It does not install an APK, change Dream selection, request permissions, or edit OS settings. Run it before Preview and Dream quality gates. A failed case stays failed even if cleanup succeeds.
 
-This is an Android process and persistence check, not a host test or a performance benchmark. The code 4 test is prepared but has not yet run; see [verification](VERIFICATION.md).
+This is an Android process and persistence check, not a host test or a performance benchmark. A physical comparison passed four cases each on code 3 and code 4, without reproducing the earlier dark-transition failure; see [verification](VERIFICATION.md).
