@@ -1,9 +1,9 @@
 <p align="center">
-  <a href="https://github.com/jeremykenedy/jellyfish-drift#gh-light-mode-only"><picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="art/banner-mobile-still-light.c102ec5163ae.svg"><source media="(prefers-reduced-motion: reduce)" srcset="art/banner-still-light.59f20ab6feb7.svg"><source media="(max-width: 600px)" srcset="art/banner-mobile-light.0592a041f1db.svg"><img src="art/banner-light.f4a8883c8e68.svg#gh-light-mode-only" alt="Jellyfish Drift" width="800"></picture></a>
-  <a href="https://github.com/jeremykenedy/jellyfish-drift#gh-dark-mode-only"><picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="art/banner-mobile-still-dark.25fd0f18787b.svg"><source media="(prefers-reduced-motion: reduce)" srcset="art/banner-still-dark.3b79f1d93f83.svg"><source media="(max-width: 600px)" srcset="art/banner-mobile-dark.9af43dd244c2.svg"><img src="art/banner-dark.f439ce277549.svg#gh-dark-mode-only" alt="Jellyfish Drift" width="800"></picture></a>
+  <a href="https://github.com/jeremykenedy/jellyfish-drift#gh-light-mode-only"><picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="art/banner-mobile-still-light.ead673b17b6a.svg"><source media="(prefers-reduced-motion: reduce)" srcset="art/banner-still-light.53b8b6ea20a2.svg"><source media="(max-width: 600px)" srcset="art/banner-mobile-light.aade8a353cc6.svg"><img src="art/banner-light.ff465825f0df.svg#gh-light-mode-only" alt="Jellyfish Drift" width="800"></picture></a>
+  <a href="https://github.com/jeremykenedy/jellyfish-drift#gh-dark-mode-only"><picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="art/banner-mobile-still-dark.93739e324fc0.svg"><source media="(prefers-reduced-motion: reduce)" srcset="art/banner-still-dark.03ea33107cec.svg"><source media="(max-width: 600px)" srcset="art/banner-mobile-dark.3ff6403710eb.svg"><img src="art/banner-dark.d991103a1450.svg#gh-dark-mode-only" alt="Jellyfish Drift" width="800"></picture></a>
 </p>
 
-<p align="center">Real filmed jellyfish scenes for compatible TV screensavers, played entirely offline.</p>
+<p align="center">The original illustrated jellyfish screensaver, with dark and light water and adjustable movement.</p>
 
 <p align="center">
   <a href="https://github.com/jeremykenedy/jellyfish-drift/releases"><img src="https://img.shields.io/github/downloads/jeremykenedy/jellyfish-drift/total" alt="GitHub release downloads"></a>
@@ -20,7 +20,7 @@
   <a href="https://github.com/sponsors/jeremykenedy"><img src="https://img.shields.io/badge/Sponsor-jeremykenedy-EA4AAA?logo=githubsponsors&logoColor=white" alt="Sponsor Jeremy Kenedy"></a>
 </p>
 
-Version 2.0 replaces generated jellyfish with two licensed recordings. Scene and speed controls match what the footage can provide. See the [verification record](docs/VERIFICATION.md) for tested behavior and limits.
+Version 3 restores the original public 1.0.0 Canvas scene in the same app package. [Jellyfish Drift V2](https://github.com/jeremykenedy/jellyfish-drift-v2) is the separate filmed app. Both can remain installed, with independent preferences. See the [verification record](docs/VERIFICATION.md).
 
 If you enjoy Jellyfish Drift, show your support by starring the repository.
 
@@ -39,19 +39,17 @@ If you enjoy Jellyfish Drift, show your support by starring the repository.
 
 ## Privacy
 
-Playback uses bundled files, with no network permission, advertisements, analytics, or tracking. The optional command-line installer contacts GitHub to download published release files and verify their checksum.
+The classic scene uses bundled artwork, with no network permission, advertisements, analytics, or tracking. The optional command-line installer contacts GitHub to download published release files and verify their checksum.
 
 ## Features
 
 | Feature | What it does | Details |
 | --- | --- | --- |
-| Real recordings | Blue aquarium Aurelia and Deep ocean Crossota scenes | [Scenes and limitations](docs/CONFIGURATION.md) |
-| Playback controls | 0.9x, recorded speed, 1.25x, or random scene and speed | [Settings](docs/CONFIGURATION.md) |
-| Offline playback | Silent 1080p H264 with a 720p fallback | [Architecture](docs/ARCHITECTURE.md) |
-| Native TV settings | Remote controls, Preview, and offline licenses | [Current gallery](docs/SCREENSHOTS.md) |
-| DreamService | The same scene player in Preview and the Android screensaver service | [Verified behavior](docs/VERIFICATION.md) |
-
-The recordings repeat every 16 or approximately 19 seconds, with editorial dissolves. Animal count, species, lighting, and camera movement come from each recording. Legacy density, species, and light-ray values remain stored but do not affect filmed playback.
+| Classic scene | Original illustrated jellyfish and continuous motion | [Architecture](docs/ARCHITECTURE.md) |
+| Water and lighting | Dark or light backgrounds and optional rays | [Configuration](docs/CONFIGURATION.md) |
+| Creature controls | Amount, species, movement, and random choices | [Configuration](docs/CONFIGURATION.md) |
+| Native settings | Preview and offline licenses, operated on the TV | [Gallery](docs/SCREENSHOTS.md) |
+| Independent apps | Classic retains its package; filmed V2 is a separate install | [Upgrade guide](docs/releases/v3.0.0.md) |
 
 ## Requirements
 
@@ -94,20 +92,19 @@ firetv-screensavers --install=jellyfish-drift --yes
 firetv-screensavers --uninstall=jellyfish-drift --force
 ```
 
-Toolkit also manages launcher choices, sleep/screensaver timers, and supported settings protection. Installation does not select a screensaver. Configure filmed scenes in Jellyfish Drift's native settings; see the [integration contract](docs/INTEGRATION.md).
+Toolkit also manages launcher choices, sleep/screensaver timers, and supported settings protection. Installation does not select a screensaver. Configure the classic scene in Jellyfish Drift's native settings; see the [integration contract](docs/INTEGRATION.md).
 
 ## Configuration
 
-Open Jellyfish Drift from the TV launcher to choose a recording or playback speed, watch Preview, or read Credits and licenses. Changes apply when the next view starts. [Configuration](docs/CONFIGURATION.md) documents all three effective controls and preservation of the six legacy raw preference values.
+Open Jellyfish Drift to choose water background, amount, movement, species, lighting, or randomization. All six original settings are effective again. The [configuration guide](docs/CONFIGURATION.md) documents their original values and provider.
 
 ## Screenshots
 
 <table>
-<tr><td><img src="art/screenshots/blue-slow-physical.png" alt="Actual code 4 physical Fire TV Dream of filmed Aurelia at 0.9x" width="100%"></td><td><img src="art/screenshots/deep-slow-physical.png" alt="Actual code 4 physical Fire TV Dream of filmed Crossota at 0.9x" width="100%"></td><td><img src="art/screenshots/deep-fast-physical.png" alt="Actual code 4 physical Fire TV Dream of filmed Crossota at 1.25x" width="100%"></td></tr>
-<tr><td>Blue aquarium at 0.9x</td><td>Deep ocean at 0.9x</td><td>Deep ocean at 1.25x</td></tr>
+<tr><td width="33%"><img src="art/screenshots/classic-dark-preview.png" alt="Deep water, original moon-jelly artwork"><br>Deep water, original moon-jelly artwork</td><td width="33%"><img src="art/screenshots/classic-light-preview.png" alt="Sunlit water, original sea-nettle artwork"><br>Sunlit water, original sea-nettle artwork</td><td width="33%"><img src="art/screenshots/classic-settings.png" alt="Six original settings"><br>Six original settings</td></tr>
 </table>
 
-Actual physical Fire TV captures of the signed 2.0.0/code 4 candidate in a bound non-test Dream. These 1920x1080 images do not establish native 4K source detail. The [complete gallery](docs/SCREENSHOTS.md) includes native settings and offline credits.
+Current native emulator captures. See the [full gallery and provenance](docs/SCREENSHOTS.md). Physical device and bound Dream gates for this split package remain pending.
 
 ## Building and testing
 
@@ -133,9 +130,10 @@ The build requires Android SDK platform 36, build-tools 36.0.0, JDK 17 or later,
 - [CI](docs/CI.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 - [Release process](docs/RELEASING.md)
-- [Version 2.0.0 upgrade guide](docs/releases/v2.0.0.md)
+- [Version 3.0.0 classic restoration guide](docs/releases/v3.0.0.md)
+- [Historical version 2.0.0 filmed release](docs/releases/v2.0.0.md)
 - [Historical version 1.0.0 notes](docs/releases/v1.0.0.md)
 
 ## License
 
-Application code is licensed under the [Apache License, Version 2.0](LICENSE). Filmed media uses separate source terms: Aurelia footage and derived images are CC BY-SA 4.0; the credited NOAA footage is public-domain material. See [media notices](assets/NOTICE.txt), the [CC BY-SA license](assets/CC-BY-SA-4.0.txt), and [project notices](NOTICE). The same notices are available offline in settings.
+Application code and original bundled artwork are licensed under the [Apache License, Version 2.0](LICENSE). See [project notices](NOTICE). The same license and notices are available offline in native settings.

@@ -1,72 +1,22 @@
-# Device verification
+# Verification
 
-Version 2.0 passed the physical Dream and presentation gates described below. These checks do not imply user visual acceptance, sustained thermal behavior, native 4K detail, or automatic idle activation on other platforms.
+Version 3.0.0/code 5 restores the public v1.0.0 Canvas scene and its original six effective controls in `com.jeremykenedy.jellyfishdrift`. It keeps the production signing identity and installs as an update over codes 1 through 4. The filmed app is separate Jellyfish Drift V2.
 
-## Current candidate
+## Scope
 
-- Package: `com.jeremykenedy.jellyfishdrift`.
-- Version: `2.0.0`, code `4`.
-- APK SHA-256: `109099f558be22a71970b56a962907053dd3b19cd6bc95b32a03101da62f0c8e`.
-- Production signing certificate SHA-256: `eba70847a8e5fc55507fdf86d18bfe36ed9ae753e1e0e2ae4807676722ef949e`.
-- Offline 1080p H264 recordings with a 720p decoder fallback. Output resolution does not imply native 4K source detail.
+The restored scene, movement, original species artwork, and settings resolution come from the actual public v1.0.0 tag. Version 3 retains acknowledged provider commits and adds offline Apache notices plus a visible initial Preview focus. It does not claim a new realistic renderer or a filmed scene.
 
-## Local checks
+Local settings and installer tests pass. Full coverage checks use the actual pure options and validation sources with 100% line and branch thresholds. The original tests missed invalid stored-choice resolution; a regression now checks its safe original fallback behavior.
 
-The signed build, privacy scan, installer tests, option regression tests, formatter, and Java coverage checks passed. The Java report covers 25 of 25 lines and 34 of 34 branches in pure option resolution and legacy value validation. This does not measure Android lifecycle or decoder correctness.
+The current signed artifact is SHA-256 `6dccbf12da0257c8263e811e999ddc2704b3b05fb81df361bdaddb3312b22dee`, 1,242,197 bytes. It retains the original production signing certificate `eba70847a8e5fc55507fdf86d18bfe36ed9ae753e1e0e2ae4807676722ef949e`.
 
-The previous Java formatter paths matched no application files, and coverage thresholds counted covered lines instead of requiring a coverage ratio. The candidate uses the repository as its Gradle project root, matches actual source files, and requires full line and branch ratios for those two pure classes.
+On October 22, 2026, the exact same-signer update over installed code 4 retained all six saved values. The native gate checked the six-value schema, Settings, offline Credits scrolling and the actual Close button, 40-second-settled dark/moon and light/sea-nettle Previews, and Back. V2's separate provider exposes only three values. Test baselines, including external bytes, were persisted before changes; exact restoration completed without errors. These results do not establish physical presentation performance or actual Dream binding.
 
-## Earlier code 3: Android TV emulator, API 34
+| Platform | Current result |
+| --- | --- |
+| Android TV API 34 emulator, 1920 x 1080 | Update retention, six-value schema, settings, credits and settled dark/light Previews passed; current [gallery](SCREENSHOTS.md) |
+| Actual bound Dream on API 34 emulator | Not established: exported Somnambulator returned no current Dream; this production AVD does not permit root-only dream commands |
+| Physical Fire TV | Version 3 gate pending |
+| Physical Google TV | Untested; a volunteer with this device is needed |
 
-The earlier `0843b6b2` code 3 candidate was installed as a same-signer update. All six previously saved Jellyfish values survived the update. The provider returned three effective schema rows and all six raw saved values.
-
-Native Preview recorded Blue aquarium for 35.03 seconds and Deep ocean for 40.01 seconds, spanning two loops of each scene. Both captures are 1920x1080. The recorded capture stream is approximately 30 fps; this is not a physical-device presentation measurement.
-
-The settings screen showed only scene, playback speed, and randomization. Preview opened from the initially focused button and returned with Back. Slow and fast scene previews were captured. D-pad navigation reached Credits, the full offline notice and license text scrolled, and Back closed the dialog. Home released the player.
-
-A follow-up verified normal task resume: Home released the player, reopening the task resumed Preview with a live 1920x1080 decoder, and Back returned to Settings. A separate remote-input check inspected fresh native focus XML at every step, selected Blue aquarium and 1.25x from their actual dropdowns, verified persisted values through the provider, and opened the corresponding Preview from the confirmed focused button. Back closure passed. A later code 4 check activated the explicit Close button by a native tap after D-pad opening and scrolling; D-pad navigation to Close is not claimed. Decoder fallback failure paths remain untested.
-
-The helper restored exact Jellyfish, Aquarium, Aquarium Live, UI backup, protection-service, and system settings. It left Home in the foreground without changing Dream selection. No app data was cleared or uninstalled.
-
-## Moving quality and physical gates
-
-The blue recording has a visible editorial loop dissolve and repeats every 16 seconds. The deep recording repeats approximately every 19 seconds and includes a source camera-view dissolve. Its top-field-first source was deinterlaced: detection changed from 599 of 600 TFF frames to 571 of 571 progressive output frames. The actual 35-second Blue aquarium and 40-second corrected Deep ocean native captures were played through their ends and reviewed as a material improvement over the earlier generated renderer. This review does not imply final owner acceptance or erase the short-loop limitations.
-
-A separate package using the original blue video established real Fire TV Dream binding and approximately 30 settled presentations per second. That prototype is not this production candidate and cannot establish the current dark recording, playback speeds, settings, or lifecycle behavior.
-
-The code 4 candidate passed actual bound-Dream validation and physical presentation measurements for both scenes at 0.9x and 1.25x. Physical functional review passed; owner visual acceptance is not claimed. Sustained thermal behavior and physical Google TV support remain unverified. Historical Canvas or shader screenshots in the repository are not evidence of the filmed candidate.
-
-## Provider persistence defect and code 4
-
-The code 3 physical run established actual non-test Dream playback for Blue aquarium at both speeds. Its minimum settled presentation windows were 26.904 presents/s at 0.9x and 36.238 at 1.25x. These are partial code 3 results, not a four-case or code 4 pass.
-
-The first Deep ocean setup then failed: a successful shell update command was followed by repeated reads of `background=light` instead of the requested `dark`. The run stopped, preserved the failed readback, and restored the fresh current 46-value UI export, app preferences, eleven OS values, external backup/import bytes, guard/VPN, prior actual Dream, and sleep state exactly. No historical layout or CSV was restored.
-
-Code 4 changes provider writes from asynchronous `apply()` to synchronous `commit()`, returning an updated row only when storage succeeds. Android documents that `apply()` acknowledges an in-memory update before its disk write finishes. Process-stop ordering or a swallowed command error may also contribute to the observed failure.
-
-On the physical Fire TV, both the installed code 3 build and the same-signer code 4 update passed four process-death cases each: two write-then-death cases and two confirmed-death-then-write cases. Each case checked scene, speed, randomization, and preservation of the other three raw values. Both runs restored the original six values exactly. The surrounding fresh UI export, eleven OS values, available Aquarium settings, external backup/import bytes, protection service, VPN, actual Dream, and prior sleep state also remained exact. No wake key, activity, Dream selection, or OS setting was changed. Aquarium Live's installed build did not expose its settings provider, so its raw preferences could not be verified; comparing provider error text is not preference preservation evidence.
-
-The earlier dark-transition failure did not reproduce in either build. The comparison therefore establishes the tested persistence behavior, not that asynchronous storage caused the earlier failure. Command stdout/stderr and failed cases remain part of the evidence. A later normal foreground Settings run passed all four actual Dream scene/speed cases, as recorded below. Videos, preview image, renderer source, and other resources are byte-identical to code 3; only the provider, version code, and media metadata changed.
-
-A subsequent code 4 actual-Dream run passed Blue aquarium at 0.9x and 1.25x, with minimum settled presentation windows of 26.904 and 36.716 presents/s. Deep ocean setup stopped on an explicit content-command error: Android temporarily could not find the Jellyfish settings provider during immediate readback after a forced process stop. No dark-scene pass is claimed. Cleanup restored the fresh 46-value UI export, eleven OS values, available provider values, external bytes, protection/VPN, selection, and prior sleep state. Aquarium Live's installed package version and APK hash also remained unchanged, without a claim about its unreadable raw preferences.
-
-Read-only device log collection then identified the provider process being killed by Android's low-memory killer immediately before the failed readback. The recorded reason was a breached file-cache threshold; further restarted provider processes were also evicted. The collected target history contained no corresponding Java fatal exception or native SIGSEGV. This is evidence of provider unavailability under memory pressure, not proof of corrupted preferences. The next functional gate uses the normal foreground Settings activity, fresh scene selection, and a newly bound Dream; the separate process-death results remain independent.
-
-## Code 4 normal Settings and Dream route
-
-A final physical run configured each scene from the resumed foreground Settings activity, then started the selected non-test Dream. Each case settled for 40 seconds before six separate 127-frame SurfaceFlinger presentation windows sampled over the next 15 seconds. These snapshots do not continuously cover every intervening frame. No screen recording ran during measurement.
-
-| Scene | Playback speed | Minimum measured presents/s |
-| --- | --- | --- |
-| Blue aquarium | 0.9x | 26.904 |
-| Blue aquarium | 1.25x | 36.716 |
-| Deep ocean | 0.9x | 26.904 |
-| Deep ocean | 1.25x | 37.241 |
-
-All four cases bound the actual normal Dream and exited with Back. These figures describe the named SurfaceView presentation timestamps, not nominal display refresh, capture-video FPS, native 4K detail, or sustained thermal performance. The native settings and player used the frozen signed code 4 artifact above.
-
-Cleanup restored the fresh 46-value UI export, eleven OS values, Aquarium's sixteen values, Jellyfish's six values, external backup/import bytes, protection/VPN, saved selections, and prior sleep state. The actual Dream baseline was unbound and remained unbound. The absent Aquarium Live settings provider remained an explicit coverage limit. No historical layout or settings export was restored.
-
-A volunteer with a physical Google TV or another untested TV is needed to report its model, OS/API, display and actual surface resolution, Dream activation, remote exit behavior, scene/speed settings, and observed playback. No compatibility result is inferred from the emulator.
-
-The combined dark-fast timestamp set contains a 266 ms gap between separately polled buffers. That uncovered sampling gap is not evidence of a video frame stall; within-buffer maxima were approximately 33.2 ms, with one window around 49.7 ms. The table uses the minimum rate calculated independently inside each observed buffer.
+Please report model, OS/API, resolution, tested behavior, and results through the repository's issue tracker when helping test unverified hardware. Native 4K detail, thermal behavior, and automatic idle startup across vendors are not established. No owner visual acceptance claim is made.

@@ -11,7 +11,7 @@ public final class JellyfishDreamService extends DreamService {
     setInteractive(false);
     setFullscreen(true);
     setScreenBright(true);
-    scene = new JellyfishSceneView(this, this::finish);
+    scene = new JellyfishSceneView(this);
     setContentView(scene);
   }
 

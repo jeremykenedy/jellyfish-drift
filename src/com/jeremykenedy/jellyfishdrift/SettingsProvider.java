@@ -56,27 +56,33 @@ public final class SettingsProvider extends ContentProvider {
         new MatrixCursor(
             new String[] {"key", "title", "type", "default", "choices", "randomAllowed"});
     cursor.addRow(
+        new Object[] {"background", "Background", "choice", "dark", "dark|light|random", true});
+    cursor.addRow(
         new Object[] {
-          "background",
-          "Filmed scene (dark: Deep ocean; light: Blue aquarium)",
+          "density",
+          "Jellyfish amount",
           "choice",
-          "dark",
-          "dark|light|random",
+          "handful",
+          "few|handful|many|ton|schools|random",
           true
         });
     cursor.addRow(
+        new Object[] {"motion", "Movement", "choice", "normal", "slow|normal|fast|random", true});
+    cursor.addRow(
         new Object[] {
-          "motion",
-          "Playback speed (slow: 0.9x; normal: 1x; fast: 1.25x)",
+          "species",
+          "Jellyfish species",
           "choice",
-          "normal",
-          "slow|normal|fast|random",
+          "moon",
+          "moon|sea_nettle|purple_stripe|random",
           true
         });
+    cursor.addRow(
+        new Object[] {"light_rays", "Sunlight from above", "choice", "off", "off|on|random", true});
     cursor.addRow(
         new Object[] {
           "randomize_all",
-          "Random scene and playback speed each start",
+          "Randomize all settings each start",
           "boolean",
           "false",
           "true|false",
