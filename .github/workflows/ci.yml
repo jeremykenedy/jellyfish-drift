@@ -33,7 +33,15 @@ jobs:
       - name: Enforce Java line and branch coverage
         run: bash scripts/test-coverage.sh
       - name: Build and validate APK
+        env:
+          JELLYFISH_KEYSTORE: ${{ runner.temp }}/jellyfish-validation.jks
+          JELLYFISH_KEYPASS: ${{ runner.temp }}/jellyfish-validation.pass
         run: |
+          umask 077
+          openssl rand -hex 24 > "$JELLYFISH_KEYPASS"
+          keytool -genkeypair -keystore "$JELLYFISH_KEYSTORE" -storepass:file "$JELLYFISH_KEYPASS" \
+            -alias jellyfish-drift -keyalg RSA -keysize 3072 -validity 30 \
+            -dname "CN=Jellyfish Drift CI Validation"
           bash build.sh
           "$ANDROID_HOME/build-tools/36.0.0/aapt" dump permissions build/jellyfish-drift.apk
           if "$ANDROID_HOME/build-tools/36.0.0/aapt" dump permissions build/jellyfish-drift.apk | grep -q android.permission.INTERNET; then

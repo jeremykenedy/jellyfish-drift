@@ -14,4 +14,4 @@ fi
 printf '%s  %s\n' "$SHA256" "$ARCHIVE" | shasum -a 256 -c - >/dev/null
 if [[ ! -x "$GRADLE" ]]; then unzip -q "$ARCHIVE" -d "$TOOLS"; fi
 "$GRADLE" --no-daemon --console=plain --gradle-user-home "$ROOT/build/coverage/gradle-cache" \
-  -p "$ROOT/coverage" check jacocoTestReport
+  -p "$ROOT" check jacocoTestReport
