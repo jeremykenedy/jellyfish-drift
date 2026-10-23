@@ -12,14 +12,14 @@ On October 22, 2026, the exact code 6 signed candidate passed a same-signer API 
 | --- | --- |
 | Android TV API 34 emulator, 1920 x 1080 | Code 6 legacy retention, 7-row schema, D-pad clock on/off, randomization independence, 20-second drift pair, Settings/Credits/Close/Preview/Back passed; current code 7 tested directly on the physical device |
 | Actual bound Dream on API 34 emulator | Not established: the production AVD does not allow root-only dream commands and exported Somnambulator did not bind a Dream in prior tests |
-| Physical Fire TV API 30, 1920 x 1080 surface | Code 7 exact installed hash and seven-value retention passed. Native controls, D-pad clock off/on, Credits/scroll/Close, Preview/Home/resume and two actual normal Dream presets passed. Minimum sampled app-layer presentation rates 29.9987 OFF and30.4872 ON |
+| Physical Fire TV API 30, 1920 x 1080 surface | Code 7 exact installed hash and seven-value retention passed. Native controls, D-pad clock off/on, Credits/scroll/Close, Preview/Home/resume and two actual normal Dream presets passed. Minimum sampled app-layer presentation rates 29.9987 OFF and 30.4872 ON |
 | Physical Google TV | Untested; a volunteer with this device is needed |
 
 Please report model, OS/API, resolution, tested behavior, and results through the repository's issue tracker when helping verify an untested device. Current [screenshots and provenance](SCREENSHOTS.md) identify the exact candidate. The two physical presets passed the 24 FPS presentation gate. Owner visual acceptance is not claimed.
 
 ## Frame scheduling
 
-Code 7 replaces a 33 ms delay after drawing with vsync callbacks and an intentional 30 FPS drawing cap. Motion still uses elapsed uptime; original artwork, drawing geometry, and motion formulas are unchanged. Tests cover 60 Hz, 59.94 Hz, 120 Hz, late callbacks, long gaps without catch-up bursts, and restart. Code 6 measured20.00 and20.66 FPS and failed its release gate. Code 7 passed three settled actual SurfaceFlinger app-layer timestamp windows per preset without screenrecord: dark/few/moon/slow clock OFF minimum29.9987 presents/s; bright/schools/nettle/fast/rays clock ON minimum30.4872 presents/s. The ON app layer includes separate clock redraws; it is not a claim that the scene cap is30.49. The windows are sampled buffers, not a continuous full-duration trace.
+Code 7 replaces a 33 ms delay after drawing with vsync callbacks and an intentional 30 FPS drawing cap. Motion still uses elapsed uptime; original artwork, drawing geometry, and motion formulas are unchanged. Tests cover 60 Hz, 59.94 Hz, 120 Hz, late callbacks, long gaps without catch-up bursts, and restart. Code 6 measured 20.00 and 20.66 FPS and failed its release gate. Code 7 passed three settled actual SurfaceFlinger app-layer timestamp windows per preset without screenrecord: dark/few/moon/slow clock OFF minimum 29.9987 presents/s; bright/schools/nettle/fast/rays clock ON minimum 30.4872 presents/s. The ON app layer includes separate clock redraws; it is not a claim that the scene cap is 30.49. The windows are sampled buffers, not a continuous full-duration trace.
 
 ## Earlier reference evidence
 
