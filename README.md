@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://github.com/jeremykenedy/jellyfish-drift#gh-light-mode-only"><picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="art/banner-mobile-still-light.06fdb2435437.svg"><source media="(prefers-reduced-motion: reduce)" srcset="art/banner-still-light.180e4f37264f.svg"><source media="(max-width: 600px)" srcset="art/banner-mobile-light.3c05d0ee479f.svg"><img src="art/banner-light.ed9fad3d48c0.svg#gh-light-mode-only" alt="Jellyfish Drift" width="800"></picture></a>
-  <a href="https://github.com/jeremykenedy/jellyfish-drift#gh-dark-mode-only"><picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="art/banner-mobile-still-dark.657615bff5d9.svg"><source media="(prefers-reduced-motion: reduce)" srcset="art/banner-still-dark.f91bb9482be9.svg"><source media="(max-width: 600px)" srcset="art/banner-mobile-dark.3d5bdbb5f396.svg"><img src="art/banner-dark.207dad6e5b97.svg#gh-dark-mode-only" alt="Jellyfish Drift" width="800"></picture></a>
+  <a href="https://github.com/jeremykenedy/jellyfish-drift#gh-light-mode-only"><picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="art/banner-mobile-still-light.c102ec5163ae.svg"><source media="(prefers-reduced-motion: reduce)" srcset="art/banner-still-light.59f20ab6feb7.svg"><source media="(max-width: 600px)" srcset="art/banner-mobile-light.0592a041f1db.svg"><img src="art/banner-light.f4a8883c8e68.svg#gh-light-mode-only" alt="Jellyfish Drift" width="800"></picture></a>
+  <a href="https://github.com/jeremykenedy/jellyfish-drift#gh-dark-mode-only"><picture><source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="art/banner-mobile-still-dark.25fd0f18787b.svg"><source media="(prefers-reduced-motion: reduce)" srcset="art/banner-still-dark.3b79f1d93f83.svg"><source media="(max-width: 600px)" srcset="art/banner-mobile-dark.9af43dd244c2.svg"><img src="art/banner-dark.f439ce277549.svg#gh-dark-mode-only" alt="Jellyfish Drift" width="800"></picture></a>
 </p>
 
 <p align="center">Real filmed jellyfish scenes for compatible TV screensavers, played entirely offline.</p>
@@ -20,7 +20,9 @@
   <a href="https://github.com/sponsors/jeremykenedy"><img src="https://img.shields.io/badge/Sponsor-jeremykenedy-EA4AAA?logo=githubsponsors&logoColor=white" alt="Sponsor Jeremy Kenedy"></a>
 </p>
 
-**2.0 filmed candidate:** final physical production Dream and presentation checks are pending. The latest published release may use the previous renderer. See the [verification record](docs/VERIFICATION.md).
+Version 2.0 replaces generated jellyfish with two licensed recordings. Scene and speed controls match what the footage can provide. See the [verification record](docs/VERIFICATION.md) for tested behavior and limits.
+
+If you enjoy Jellyfish Drift, show your support by starring the repository.
 
 ## Table of contents
 
@@ -28,6 +30,7 @@
 - [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [Fire TV Toolkit](#fire-tv-toolkit)
 - [Configuration](#configuration)
 - [Screenshots](#screenshots)
 - [Building and testing](#building-and-testing)
@@ -66,7 +69,32 @@ For the **published release**, connect the TV with ADB and run:
 python3 install.py --serial TV_IP:5555
 ```
 
-The installer verifies the downloaded APK against its release checksum and updates the existing package. It does not automatically select a screensaver. The unreleased 2.0 candidate requires a [local build](docs/BUILDING.md). See [installation and removal](docs/INSTALLATION.md).
+The installer verifies the downloaded APK against its release checksum and updates the existing package. It does not automatically select a screensaver. See [installation and removal](docs/INSTALLATION.md).
+
+## Fire TV Toolkit
+
+[Fire TV Toolkit](https://github.com/jeremykenedy/fire-tv-toolkit) provides guided TV setup and screensaver management. Set up its CLI first:
+
+```bash
+git clone https://github.com/jeremykenedy/fire-tv-toolkit.git
+cd fire-tv-toolkit
+node setup.js
+```
+
+Use these commands for the published Jellyfish Drift release:
+
+```bash
+# Install
+firetv-screensavers --install=jellyfish-drift --yes
+# Select separately
+screensaver --set=jellyfish-drift
+# Update the installed package
+firetv-screensavers --install=jellyfish-drift --yes
+# Remove the app and its saved preferences
+firetv-screensavers --uninstall=jellyfish-drift --force
+```
+
+Toolkit also manages launcher choices, sleep/screensaver timers, and supported settings protection. Installation does not select a screensaver. Configure filmed scenes in Jellyfish Drift's native settings; see the [integration contract](docs/INTEGRATION.md).
 
 ## Configuration
 
@@ -75,11 +103,11 @@ Open Jellyfish Drift from the TV launcher to choose a recording or playback spee
 ## Screenshots
 
 <table>
-<tr><td><img src="art/screenshots/blue-aquarium-native.png" alt="Actual 2.0 native Preview of filmed Aurelia in blue aquarium water" width="100%"></td><td><img src="art/screenshots/deep-ocean-native.png" alt="Actual 2.0 native Preview of filmed Crossota in deep ocean water" width="100%"></td><td><img src="art/screenshots/settings-native.png" alt="Actual native scene and playback speed settings" width="100%"></td></tr>
-<tr><td>Blue aquarium</td><td>Deep ocean</td><td>Native settings</td></tr>
+<tr><td><img src="art/screenshots/blue-slow-physical.png" alt="Actual code 4 physical Fire TV Dream of filmed Aurelia at 0.9x" width="100%"></td><td><img src="art/screenshots/deep-slow-physical.png" alt="Actual code 4 physical Fire TV Dream of filmed Crossota at 0.9x" width="100%"></td><td><img src="art/screenshots/deep-fast-physical.png" alt="Actual code 4 physical Fire TV Dream of filmed Crossota at 1.25x" width="100%"></td></tr>
+<tr><td>Blue aquarium at 0.9x</td><td>Deep ocean at 0.9x</td><td>Deep ocean at 1.25x</td></tr>
 </table>
 
-Current Android TV API 34 emulator captures of the signed 2.0 candidate. These are native Preview images, not physical Fire TV or 4K evidence. The [complete gallery](docs/SCREENSHOTS.md) includes credits, speed choices, and resumed playback.
+Actual physical Fire TV captures of the signed 2.0.0/code 4 candidate in a bound non-test Dream. These 1920x1080 images do not establish native 4K source detail. The [complete gallery](docs/SCREENSHOTS.md) includes credits, speed choices, and resumed playback.
 
 ## Building and testing
 
@@ -95,6 +123,7 @@ The build requires Android SDK platform 36, build-tools 36.0.0, JDK 17 or later,
 ## Documentation
 
 - [Configuration and migration](docs/CONFIGURATION.md)
+- [Host integration contract](docs/INTEGRATION.md)
 - [Screenshots](docs/SCREENSHOTS.md)
 - [Installation, update, and removal](docs/INSTALLATION.md)
 - [Building from source](docs/BUILDING.md)
@@ -104,6 +133,7 @@ The build requires Android SDK platform 36, build-tools 36.0.0, JDK 17 or later,
 - [CI](docs/CI.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 - [Release process](docs/RELEASING.md)
+- [Version 2.0.0 upgrade guide](docs/releases/v2.0.0.md)
 - [Historical version 1.0.0 notes](docs/releases/v1.0.0.md)
 
 ## License

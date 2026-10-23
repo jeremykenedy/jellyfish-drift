@@ -1,94 +1,89 @@
 {
   "captures": [
     {
-      "path": "art/screenshots/blue-aquarium-native.png",
-      "sha256": "fbb44a1539e484cad0d3ebc1bd81b2d9cf8d77cf21c23b99be02b9de4db24e39",
-      "platform": "Android TV API34 emulator",
+      "path": "art/screenshots/blue-slow-physical.png",
+      "sha256": "23082e955c2102f8f5da2b576116f187d83586cdf057fb977171e2a1cfacf759",
+      "platform": "Physical Fire TV, API30",
       "resolution": "1920x1080",
       "captureDate": "2026-10-22",
-      "candidateAPK": "0843b6b2005667d2ddec910bd2a25c9b3000111864369c1175650ae4774d77e9",
-      "version": "2.0.0/code3",
-      "physicalDevice": false
+      "candidateAPK": "109099f558be22a71970b56a962907053dd3b19cd6bc95b32a03101da62f0c8e",
+      "version": "2.0.0/code4",
+      "physicalDevice": true,
+      "route": "Actual selected non-test Dream, after40-second settle and presentation sampling",
+      "scene": "Blue aquarium",
+      "playbackSpeed": "0.9x"
     },
     {
-      "path": "art/screenshots/deep-ocean-native.png",
-      "sha256": "c634213bb7f39a5509cad1377d0a636c42245e22a61a879466778ad5dd6bee2c",
-      "platform": "Android TV API34 emulator",
+      "path": "art/screenshots/blue-fast-physical.png",
+      "sha256": "c948ec0d8070844e3a92c4d5d358f96b831420ad2943f2edb623b896d0138ae3",
+      "platform": "Physical Fire TV, API30",
       "resolution": "1920x1080",
       "captureDate": "2026-10-22",
-      "candidateAPK": "0843b6b2005667d2ddec910bd2a25c9b3000111864369c1175650ae4774d77e9",
-      "version": "2.0.0/code3",
-      "physicalDevice": false
+      "candidateAPK": "109099f558be22a71970b56a962907053dd3b19cd6bc95b32a03101da62f0c8e",
+      "version": "2.0.0/code4",
+      "physicalDevice": true,
+      "route": "Actual selected non-test Dream, after40-second settle and presentation sampling",
+      "scene": "Blue aquarium",
+      "playbackSpeed": "1.25x"
+    },
+    {
+      "path": "art/screenshots/deep-slow-physical.png",
+      "sha256": "decd3dccc794723e7e0bb355ccb05a964a3d5b46214d3bea67148b98cff963cd",
+      "platform": "Physical Fire TV, API30",
+      "resolution": "1920x1080",
+      "captureDate": "2026-10-22",
+      "candidateAPK": "109099f558be22a71970b56a962907053dd3b19cd6bc95b32a03101da62f0c8e",
+      "version": "2.0.0/code4",
+      "physicalDevice": true,
+      "route": "Actual selected non-test Dream, after40-second settle and presentation sampling",
+      "scene": "Deep ocean",
+      "playbackSpeed": "0.9x"
+    },
+    {
+      "path": "art/screenshots/deep-fast-physical.png",
+      "sha256": "1f9d4240dac6fffcbaba0f011787ccd8bce2aef34de64eeb2838785ee564d60e",
+      "platform": "Physical Fire TV, API30",
+      "resolution": "1920x1080",
+      "captureDate": "2026-10-22",
+      "candidateAPK": "109099f558be22a71970b56a962907053dd3b19cd6bc95b32a03101da62f0c8e",
+      "version": "2.0.0/code4",
+      "physicalDevice": true,
+      "route": "Actual selected non-test Dream, after40-second settle and presentation sampling",
+      "scene": "Deep ocean",
+      "playbackSpeed": "1.25x"
     },
     {
       "path": "art/screenshots/settings-native.png",
-      "sha256": "627a3ada3c8f2f388276d6eb25ab822d899061251d15404be2a01cf0865a7da8",
+      "sha256": "b389eab5a0816ba6010dc972fb979ea0deddb6b924e065ff6110e89a95ea125f",
       "platform": "Android TV API34 emulator",
       "resolution": "1920x1080",
       "captureDate": "2026-10-22",
-      "candidateAPK": "0843b6b2005667d2ddec910bd2a25c9b3000111864369c1175650ae4774d77e9",
-      "version": "2.0.0/code3",
-      "physicalDevice": false
+      "candidateAPK": "109099f558be22a71970b56a962907053dd3b19cd6bc95b32a03101da62f0c8e",
+      "version": "2.0.0/code4",
+      "physicalDevice": false,
+      "route": "Native Settings and Credits; Settings capture taken after explicit Close, after first transitional capture was rejected"
     },
     {
       "path": "art/screenshots/credits-native.png",
-      "sha256": "a50e1d70bd3bee7fa1de513cab95d480bc286df3daa9698c94e827b8e2013c4b",
+      "sha256": "38e6476aa30dbf4bae93fb447810536e509d1cf12959a95cbc618d27862e42c0",
       "platform": "Android TV API34 emulator",
       "resolution": "1920x1080",
       "captureDate": "2026-10-22",
-      "candidateAPK": "0843b6b2005667d2ddec910bd2a25c9b3000111864369c1175650ae4774d77e9",
-      "version": "2.0.0/code3",
-      "physicalDevice": false
+      "candidateAPK": "109099f558be22a71970b56a962907053dd3b19cd6bc95b32a03101da62f0c8e",
+      "version": "2.0.0/code4",
+      "physicalDevice": false,
+      "route": "Native Settings and Credits; Settings capture taken after explicit Close, after first transitional capture was rejected"
     },
     {
       "path": "art/screenshots/credits-scrolled-native.png",
-      "sha256": "e893a8df09ee5557b54061f821b90fb4f1315175de22ad69b42d93561ba63085",
+      "sha256": "d602daecc60af662dac02a469190984840a4cb60fd0195dadc7512526cf0aa90",
       "platform": "Android TV API34 emulator",
       "resolution": "1920x1080",
       "captureDate": "2026-10-22",
-      "candidateAPK": "0843b6b2005667d2ddec910bd2a25c9b3000111864369c1175650ae4774d77e9",
-      "version": "2.0.0/code3",
-      "physicalDevice": false
-    },
-    {
-      "path": "art/screenshots/blue-fast-native.png",
-      "sha256": "ba913063d5454b8c528d12283c245a5cc65f42b58c7c4ec4c8921a2007a72c54",
-      "platform": "Android TV API34 emulator",
-      "resolution": "1920x1080",
-      "captureDate": "2026-10-22",
-      "candidateAPK": "0843b6b2005667d2ddec910bd2a25c9b3000111864369c1175650ae4774d77e9",
-      "version": "2.0.0/code3",
-      "physicalDevice": false
-    },
-    {
-      "path": "art/screenshots/deep-slow-native.png",
-      "sha256": "6c075121115371c2933e8ba9424aed756da67a88da73fcc7e732459c347b9fb5",
-      "platform": "Android TV API34 emulator",
-      "resolution": "1920x1080",
-      "captureDate": "2026-10-22",
-      "candidateAPK": "0843b6b2005667d2ddec910bd2a25c9b3000111864369c1175650ae4774d77e9",
-      "version": "2.0.0/code3",
-      "physicalDevice": false
-    },
-    {
-      "path": "art/screenshots/deep-fast-native.png",
-      "sha256": "b57198a2c308cb3ce27f472fb5d27e8730b6e0e97d620ccb74a6c4c01af96a6b",
-      "platform": "Android TV API34 emulator",
-      "resolution": "1920x1080",
-      "captureDate": "2026-10-22",
-      "candidateAPK": "0843b6b2005667d2ddec910bd2a25c9b3000111864369c1175650ae4774d77e9",
-      "version": "2.0.0/code3",
-      "physicalDevice": false
-    },
-    {
-      "path": "art/screenshots/resumed-native.png",
-      "sha256": "c098fbe11441e74a9314d814398df20ad380a639e58541e9ba878bd262dc77aa",
-      "platform": "Android TV API34 emulator",
-      "resolution": "1920x1080",
-      "captureDate": "2026-10-22",
-      "candidateAPK": "0843b6b2005667d2ddec910bd2a25c9b3000111864369c1175650ae4774d77e9",
-      "version": "2.0.0/code3",
-      "physicalDevice": false
+      "candidateAPK": "109099f558be22a71970b56a962907053dd3b19cd6bc95b32a03101da62f0c8e",
+      "version": "2.0.0/code4",
+      "physicalDevice": false,
+      "route": "Native Settings and Credits; Settings capture taken after explicit Close, after first transitional capture was rejected"
     }
   ],
   "mediaLicenses": "See assets/NOTICE.txt; Aurelia-derived images remain CC BY-SA4.0, NOAA-derived images use the source public-domain terms."

@@ -33,7 +33,7 @@ def banner(theme, mobile, still):
     tagline_y, tagline_size = (106, 13) if mobile else (111, 14)
     pill_y = 130
     illustration = 'translate(86 202) scale(1.08)' if mobile else 'translate(570 36)'
-    labels = [('Filmed scenes', 92, '#60a5fa', '#eff6ff', '#1e40af'), ('Offline', 64, '#4ade80', '#f0fdf4', '#166534'), ('Playback speed', 104, '#a78bfa', '#f5f3ff', '#6d28d9')]
+    labels = [('Filmed scenes', 92, '#60a5fa', '#eff6ff', '#1e40af'), ('Offline', 64, '#4ade80', '#f0fdf4', '#166534'), ('No tracking or analytics', 144, '#a78bfa', '#f5f3ff', '#6d28d9')]
     pills = []
     x = 20 if mobile else 40
     for label, w, accent, light, text in labels:
@@ -41,7 +41,7 @@ def banner(theme, mobile, still):
         pills.append(f'<rect x="{x}" y="{pill_y}" width="{w}" height="22" rx="11" fill="{fill}" stroke="{accent}" stroke-width=".8"/><text x="{x+w/2}" y="{pill_y+14}" fill="{ink}">{label}</text>')
         x += w + 8
     result = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">
-<title id="title">Jellyfish Drift</title><desc id="desc">Real filmed jellyfish scenes with offline playback and playback speed controls. The illustration is decorative.</desc>
+<title id="title">Jellyfish Drift</title><desc id="desc">Real filmed jellyfish scenes with offline playback, no tracking or analytics. The illustration is decorative.</desc>
 {'' if still else STYLE}
 <defs><linearGradient id="background" x2="1" y2="1"><stop stop-color="#0c0a09"/><stop offset="1" stop-color="#1c1917"/></linearGradient><radialGradient id="bell" cx="38%" cy="25%"><stop stop-color="#dbeafe" stop-opacity=".9"/><stop offset="1" stop-color="#6366f1" stop-opacity=".25"/></radialGradient></defs>
 <rect width="{width}" height="{height}" rx="16" fill="{background}" stroke="{'#292524' if dark else '#e5e7eb'}"/>

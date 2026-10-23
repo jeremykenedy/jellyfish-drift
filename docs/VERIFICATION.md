@@ -1,6 +1,6 @@
 # Device verification
 
-The 2.0 filmed candidate is isolated and has not been released or accepted as a production replacement. A build or preview does not prove vendor idle activation, sustained performance, or visual quality.
+Version 2.0 passed the physical Dream and presentation gates described below. These checks do not imply user visual acceptance, sustained thermal behavior, native 4K detail, or automatic idle activation on other platforms.
 
 ## Current candidate
 
@@ -24,7 +24,7 @@ Native Preview recorded Blue aquarium for 35.03 seconds and Deep ocean for 40.01
 
 The settings screen showed only scene, playback speed, and randomization. Preview opened from the initially focused button and returned with Back. Slow and fast scene previews were captured. D-pad navigation reached Credits, the full offline notice and license text scrolled, and Back closed the dialog. Home released the player.
 
-A follow-up verified normal task resume: Home released the player, reopening the task resumed Preview with a live 1920x1080 decoder, and Back returned to Settings. A separate remote-input check inspected fresh native focus XML at every step, selected Blue aquarium and 1.25x from their actual dropdowns, verified persisted values through the provider, and opened the corresponding Preview from the confirmed focused button. The dialog's explicit Close button and decoder fallback failure paths remain untested; Back closure passed.
+A follow-up verified normal task resume: Home released the player, reopening the task resumed Preview with a live 1920x1080 decoder, and Back returned to Settings. A separate remote-input check inspected fresh native focus XML at every step, selected Blue aquarium and 1.25x from their actual dropdowns, verified persisted values through the provider, and opened the corresponding Preview from the confirmed focused button. Back closure passed. A later code 4 check activated the explicit Close button by a native tap after D-pad opening and scrolling; D-pad navigation to Close is not claimed. Decoder fallback failure paths remain untested.
 
 The helper restored exact Jellyfish, Aquarium, Aquarium Live, UI backup, protection-service, and system settings. It left Home in the foreground without changing Dream selection. No app data was cleared or uninstalled.
 
@@ -34,7 +34,7 @@ The blue recording has a visible editorial loop dissolve and repeats every 16 se
 
 A separate package using the original blue video established real Fire TV Dream binding and approximately 30 settled presentations per second. That prototype is not this production candidate and cannot establish the current dark recording, playback speeds, settings, or lifecycle behavior.
 
-The current production candidate still needs actual bound-Dream validation and physical presentation measurements at all supported speeds, plus final moving quality acceptance. Sustained thermal behavior and physical Google TV support remain unverified. Historical Canvas or shader screenshots in the repository are not evidence of the filmed candidate.
+The code 4 candidate passed actual bound-Dream validation and physical presentation measurements for both scenes at 0.9x and 1.25x. Physical functional review passed; owner visual acceptance is not claimed. Sustained thermal behavior and physical Google TV support remain unverified. Historical Canvas or shader screenshots in the repository are not evidence of the filmed candidate.
 
 ## Provider persistence defect and code 4
 
@@ -46,8 +46,25 @@ Code 4 changes provider writes from asynchronous `apply()` to synchronous `commi
 
 On the physical Fire TV, both the installed code 3 build and the same-signer code 4 update passed four process-death cases each: two write-then-death cases and two confirmed-death-then-write cases. Each case checked scene, speed, randomization, and preservation of the other three raw values. Both runs restored the original six values exactly. The surrounding fresh UI export, eleven OS values, available Aquarium settings, external backup/import bytes, protection service, VPN, actual Dream, and prior sleep state also remained exact. No wake key, activity, Dream selection, or OS setting was changed. Aquarium Live's installed build did not expose its settings provider, so its raw preferences could not be verified; comparing provider error text is not preference preservation evidence.
 
-The earlier dark-transition failure did not reproduce in either build. The comparison therefore establishes the tested persistence behavior, not that asynchronous storage caused the earlier failure. Command stdout/stderr and failed cases remain part of the evidence. All four actual Dream scene/speed cases still need a successful code 4 run. Videos, preview image, renderer source, and other resources are byte-identical to code 3; only the provider, version code, and media metadata changed.
+The earlier dark-transition failure did not reproduce in either build. The comparison therefore establishes the tested persistence behavior, not that asynchronous storage caused the earlier failure. Command stdout/stderr and failed cases remain part of the evidence. A later normal foreground Settings run passed all four actual Dream scene/speed cases, as recorded below. Videos, preview image, renderer source, and other resources are byte-identical to code 3; only the provider, version code, and media metadata changed.
 
 A subsequent code 4 actual-Dream run passed Blue aquarium at 0.9x and 1.25x, with minimum settled presentation windows of 26.904 and 36.716 presents/s. Deep ocean setup stopped on an explicit content-command error: Android temporarily could not find the Jellyfish settings provider during immediate readback after a forced process stop. No dark-scene pass is claimed. Cleanup restored the fresh 46-value UI export, eleven OS values, available provider values, external bytes, protection/VPN, selection, and prior sleep state. Aquarium Live's installed package version and APK hash also remained unchanged, without a claim about its unreadable raw preferences.
 
 Read-only device log collection then identified the provider process being killed by Android's low-memory killer immediately before the failed readback. The recorded reason was a breached file-cache threshold; further restarted provider processes were also evicted. The collected target history contained no corresponding Java fatal exception or native SIGSEGV. This is evidence of provider unavailability under memory pressure, not proof of corrupted preferences. The next functional gate uses the normal foreground Settings activity, fresh scene selection, and a newly bound Dream; the separate process-death results remain independent.
+
+## Code 4 normal Settings and Dream route
+
+A final physical run configured each scene from the resumed foreground Settings activity, then started the selected non-test Dream. Each case settled for 40 seconds before six actual SurfaceFlinger presentation windows spanning the next 15 seconds. No screen recording ran during measurement.
+
+| Scene | Playback speed | Minimum measured presents/s |
+| --- | --- | --- |
+| Blue aquarium | 0.9x | 26.904 |
+| Blue aquarium | 1.25x | 36.716 |
+| Deep ocean | 0.9x | 26.904 |
+| Deep ocean | 1.25x | 37.241 |
+
+All four cases bound the actual normal Dream and exited with Back. These figures describe the named SurfaceView presentation timestamps, not nominal display refresh, capture-video FPS, native 4K detail, or sustained thermal performance. The native settings and player used the frozen signed code 4 artifact above.
+
+Cleanup restored the fresh 46-value UI export, eleven OS values, Aquarium's sixteen values, Jellyfish's six values, external backup/import bytes, protection/VPN, saved selections, and prior sleep state. The actual Dream baseline was unbound and remained unbound. The absent Aquarium Live settings provider remained an explicit coverage limit. No historical layout or settings export was restored.
+
+A volunteer with a physical Google TV or another untested TV is needed to report its model, OS/API, display and actual surface resolution, Dream activation, remote exit behavior, scene/speed settings, and observed playback. No compatibility result is inferred from the emulator.
