@@ -54,7 +54,7 @@ Read-only device log collection then identified the provider process being kille
 
 ## Code 4 normal Settings and Dream route
 
-A final physical run configured each scene from the resumed foreground Settings activity, then started the selected non-test Dream. Each case settled for 40 seconds before six actual SurfaceFlinger presentation windows spanning the next 15 seconds. No screen recording ran during measurement.
+A final physical run configured each scene from the resumed foreground Settings activity, then started the selected non-test Dream. Each case settled for 40 seconds before six separate 127-frame SurfaceFlinger presentation windows sampled over the next 15 seconds. These snapshots do not continuously cover every intervening frame. No screen recording ran during measurement.
 
 | Scene | Playback speed | Minimum measured presents/s |
 | --- | --- | --- |
@@ -68,3 +68,5 @@ All four cases bound the actual normal Dream and exited with Back. These figures
 Cleanup restored the fresh 46-value UI export, eleven OS values, Aquarium's sixteen values, Jellyfish's six values, external backup/import bytes, protection/VPN, saved selections, and prior sleep state. The actual Dream baseline was unbound and remained unbound. The absent Aquarium Live settings provider remained an explicit coverage limit. No historical layout or settings export was restored.
 
 A volunteer with a physical Google TV or another untested TV is needed to report its model, OS/API, display and actual surface resolution, Dream activation, remote exit behavior, scene/speed settings, and observed playback. No compatibility result is inferred from the emulator.
+
+The combined dark-fast timestamp set contains a 266 ms gap between separately polled buffers. That uncovered sampling gap is not evidence of a video frame stall; within-buffer maxima were approximately 33.2 ms, with one window around 49.7 ms. The table uses the minimum rate calculated independently inside each observed buffer.
