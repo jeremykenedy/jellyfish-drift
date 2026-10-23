@@ -107,7 +107,7 @@ Open Jellyfish Drift from the TV launcher to choose a recording or playback spee
 <tr><td>Blue aquarium at 0.9x</td><td>Deep ocean at 0.9x</td><td>Deep ocean at 1.25x</td></tr>
 </table>
 
-Actual physical Fire TV captures of the signed 2.0.0/code 4 candidate in a bound non-test Dream. These 1920x1080 images do not establish native 4K source detail. The [complete gallery](docs/SCREENSHOTS.md) includes credits, speed choices, and resumed playback.
+Actual physical Fire TV captures of the signed 2.0.0/code 4 candidate in a bound non-test Dream. These 1920x1080 images do not establish native 4K source detail. The [complete gallery](docs/SCREENSHOTS.md) includes native settings and offline credits.
 
 ## Building and testing
 
