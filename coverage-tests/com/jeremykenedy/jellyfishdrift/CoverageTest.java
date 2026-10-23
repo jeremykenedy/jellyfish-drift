@@ -7,4 +7,9 @@ public final class CoverageTest {
   public void validatesSettingResolutionAndProviderValues() {
     JellyfishOptionsTest.main(new String[0]);
   }
+
+  @Test
+  public void pacesDrawingWithoutAccumulatingDrawTime() {
+    FramePacerTest.main(new String[0]);
+  }
 }

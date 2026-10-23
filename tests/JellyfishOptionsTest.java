@@ -4,61 +4,84 @@ import java.util.Random;
 
 public final class JellyfishOptionsTest {
   public static void main(String[] args) {
-    verifyFilmedOptions();
-    verifyRandomSelections();
+    verifyDensitySettings();
+    verifyMotionAndSpeciesSettings();
+    verifyExplicitAndRandomSelections();
     verifySettingsProviderValues();
+    verifyOptionalClock();
     System.out.println("Jellyfish settings tests passed.");
   }
 
-  private static void verifyFilmedOptions() {
-    JellyfishOptions dark =
-        JellyfishOptions.resolve(
-            "dark", "schools", "normal", "sea_nettle", "on", false, new Random(1));
-    check("crossota".equals(dark.scene) && dark.speed == 1f, "dark selects the deep-ocean film");
-    JellyfishOptions light =
-        JellyfishOptions.resolve("light", "few", "fast", "moon", "off", false, new Random(1));
-    check(
-        "aurelia".equals(light.scene) && light.speed == 1.25f,
-        "light selects the blue-aquarium film");
-    check(JellyfishOptions.speedFor("slow") == 0.9f, "slow is 0.9x");
-    check(JellyfishOptions.speedFor("normal") == 1f, "normal is recorded speed");
-    check(JellyfishOptions.speedFor("unknown") == 1f, "invalid speed falls back to recorded speed");
-    check(JellyfishOptions.speedFor("fast") == 1.25f, "fast is 1.25x");
-    JellyfishOptions invalid =
-        JellyfishOptions.resolve("unknown", "few", "unknown", "moon", "off", false, new Random(1));
-    check("crossota".equals(invalid.scene) && invalid.speed == 1f, "invalid options are safe");
-    JellyfishOptions legacy =
-        JellyfishOptions.resolve(
-            "dark",
-            "random",
-            "normal",
-            "random",
-            "random",
-            false,
-            new Random() {
-              @Override
-              public int nextInt(int bound) {
-                throw new AssertionError("inactive values consumed randomness");
-              }
-            });
-    check(
-        "crossota".equals(legacy.scene) && legacy.speed == 1f,
-        "legacy controls do not affect film");
+  private static void verifyDensitySettings() {
+    check(JellyfishOptions.countFor("few") == 3, "few density");
+    check(JellyfishOptions.countFor("handful") == 7, "default density");
+    check(JellyfishOptions.countFor("unknown") == 7, "safe density fallback");
+    check(JellyfishOptions.countFor("many") == 11, "many density");
+    check(JellyfishOptions.countFor("ton") == 17, "ton density");
+    check(JellyfishOptions.countFor("schools") == 25, "schools density");
   }
 
-  private static void verifyRandomSelections() {
-    for (int index = 0; index < 3; index++) {
-      JellyfishOptions perSetting =
+  private static void verifyMotionAndSpeciesSettings() {
+    check(JellyfishOptions.speedFor("slow") == 0.55f, "slow motion");
+    check(JellyfishOptions.speedFor("normal") == 1f, "normal motion");
+    check(JellyfishOptions.speedFor("unknown") == 1f, "safe motion fallback");
+    check(JellyfishOptions.speedFor("fast") == 1.65f, "fast motion");
+    check(JellyfishOptions.speciesFor("moon") == 0, "moon jelly");
+    check(JellyfishOptions.speciesFor("sea_nettle") == 1, "sea nettle");
+    check(JellyfishOptions.speciesFor("purple_stripe") == 2, "purple stripe");
+    check(JellyfishOptions.speciesFor("unknown") == 0, "safe species fallback");
+  }
+
+  private static void verifyExplicitAndRandomSelections() {
+    JellyfishOptions invalid =
+        JellyfishOptions.resolve(
+            "invalid", "invalid", "invalid", "invalid", "invalid", false, new Random(1));
+    check(
+        !invalid.lightBackground
+            && invalid.count == 3
+            && invalid.speed == 0.55f
+            && invalid.species == 0
+            && !invalid.shimmer,
+        "invalid stored choices fall back to the original first supported values");
+    JellyfishOptions explicit =
+        JellyfishOptions.resolve("light", "few", "fast", "sea_nettle", "on", false, new Random(1));
+    check(
+        explicit.lightBackground
+            && explicit.count == 3
+            && explicit.speed == 1.65f
+            && explicit.species == 1
+            && explicit.shimmer,
+        "explicit options");
+    JellyfishOptions perSetting =
+        JellyfishOptions.resolve(
+            "random", "random", "random", "random", "random", false, new Random(27));
+    check(perSetting.count >= 3 && perSetting.count <= 25, "random count bounds");
+    check(perSetting.speed >= 0.55f && perSetting.speed <= 1.65f, "random speed bounds");
+    check(perSetting.species >= 0 && perSetting.species <= 2, "random species bounds");
+    JellyfishOptions all =
+        JellyfishOptions.resolve("dark", "few", "slow", "moon", "off", true, new Random(5));
+    check(
+        all.count >= 3
+            && all.count <= 25
+            && all.speed >= 0.55f
+            && all.speed <= 1.65f
+            && all.species >= 0
+            && all.species <= 2,
+        "randomize all options");
+    check(
+        !JellyfishOptions.resolve("dark", "few", "slow", "moon", "off", false, new Random(3))
+            .shimmer,
+        "explicit shimmer off");
+    check(
+        JellyfishOptions.resolve(
+                "light", "many", "fast", "purple_stripe", "on", false, new Random(3))
+            .lightBackground,
+        "later explicit options resolve");
+    for (int index = 0; index < 5; index++) {
+      JellyfishOptions option =
           JellyfishOptions.resolve(
-              "random", "few", "random", "moon", "off", false, new FixedRandom(index));
-      JellyfishOptions all =
-          JellyfishOptions.resolve(
-              "light", "schools", "fast", "sea_nettle", "on", true, new FixedRandom(index));
-      check(
-          perSetting.scene.equals(all.scene) && perSetting.speed == all.speed,
-          "only effective settings randomized");
-      check(perSetting.scene.equals(index == 0 ? "crossota" : "aurelia"), "random scene selection");
-      check(perSetting.speed == new float[] {1f, 0.9f, 1.25f}[index], "random speed selection");
+              "dark", "handful", "normal", "moon", "off", false, new FixedRandom(index));
+      check(option.count >= 3 && option.count <= 25, "random density option range");
     }
   }
 
@@ -93,6 +116,12 @@ public final class JellyfishOptionsTest {
     check(SettingsValues.isSupported("randomize_all", "true"), "randomize all accepted");
     check(SettingsValues.isSupported("randomize_all", "false"), "randomize toggle accepted");
     check(!SettingsValues.isSupported("unknown", "value"), "unknown key rejected");
+  }
+
+  private static void verifyOptionalClock() {
+    check(SettingsValues.isSupported("show_clock", "true"), "clock opt-in accepted");
+    check(SettingsValues.isSupported("show_clock", "false"), "clock opt-out accepted");
+    check(!SettingsValues.isSupported("show_clock", "on"), "ambiguous clock value rejected");
   }
 
   private static void check(boolean result, String message) {

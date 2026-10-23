@@ -1,90 +1,80 @@
 {
-  "captures": [
+  "candidate": "3.0.0/code7",
+  "apkSha256": "2e3a8e5ad912b40bb614568e83c0f752b26e5be3bf9e8f06bb02e917063e3cb2",
+  "capturedAtUTC": "2026-10-23",
+  "platform": "Physical Fire TV AFTDEC012E API30",
+  "resolution": [
+    1920,
+    1080
+  ],
+  "captureMethod": "adb exec-out screencap -p from current native Settings, Preview and bound non-test Dream",
+  "images": [
     {
-      "path": "art/screenshots/blue-slow-physical.png",
-      "sha256": "23082e955c2102f8f5da2b576116f187d83586cdf057fb977171e2a1cfacf759",
-      "platform": "Physical Fire TV, API30",
-      "resolution": "1920x1080",
-      "captureDate": "2026-10-22",
-      "candidateAPK": "109099f558be22a71970b56a962907053dd3b19cd6bc95b32a03101da62f0c8e",
-      "version": "2.0.0/code4",
-      "physicalDevice": true,
-      "route": "Actual selected non-test Dream, after40-second settle and presentation sampling",
-      "scene": "Blue aquarium",
-      "playbackSpeed": "0.9x"
+      "file": "physical-classic-clock-off.png",
+      "description": "Dark water, three moon jellyfish, clock off",
+      "sha256": "18c2334c2bf93250947a68f6201733da8c6768543e4f4e2f63dd65d9fc3ef39d",
+      "width": 1920,
+      "height": 1080,
+      "actualBoundNonTestDream": true
     },
     {
-      "path": "art/screenshots/blue-fast-physical.png",
-      "sha256": "c948ec0d8070844e3a92c4d5d358f96b831420ad2943f2edb623b896d0138ae3",
-      "platform": "Physical Fire TV, API30",
-      "resolution": "1920x1080",
-      "captureDate": "2026-10-22",
-      "candidateAPK": "109099f558be22a71970b56a962907053dd3b19cd6bc95b32a03101da62f0c8e",
-      "version": "2.0.0/code4",
-      "physicalDevice": true,
-      "route": "Actual selected non-test Dream, after40-second settle and presentation sampling",
-      "scene": "Blue aquarium",
-      "playbackSpeed": "1.25x"
+      "file": "physical-classic-clock-start.png",
+      "description": "Bright water, schools, clock on",
+      "sha256": "ffd6cb27a8375bf517509a5d62a2ef096297b040026f2efc4ce88bc72bfa4147",
+      "width": 1920,
+      "height": 1080,
+      "actualBoundNonTestDream": true
     },
     {
-      "path": "art/screenshots/deep-slow-physical.png",
-      "sha256": "decd3dccc794723e7e0bb355ccb05a964a3d5b46214d3bea67148b98cff963cd",
-      "platform": "Physical Fire TV, API30",
-      "resolution": "1920x1080",
-      "captureDate": "2026-10-22",
-      "candidateAPK": "109099f558be22a71970b56a962907053dd3b19cd6bc95b32a03101da62f0c8e",
-      "version": "2.0.0/code4",
-      "physicalDevice": true,
-      "route": "Actual selected non-test Dream, after40-second settle and presentation sampling",
-      "scene": "Deep ocean",
-      "playbackSpeed": "0.9x"
+      "file": "physical-classic-clock-drift.png",
+      "description": "Same Dream with later clock position",
+      "sha256": "911a91fdf142f93418837f90ba1674a0bcdbef2bd0f80b79c4e9844119e59105",
+      "width": 1920,
+      "height": 1080,
+      "actualBoundNonTestDream": true
     },
     {
-      "path": "art/screenshots/deep-fast-physical.png",
-      "sha256": "1f9d4240dac6fffcbaba0f011787ccd8bce2aef34de64eeb2838785ee564d60e",
-      "platform": "Physical Fire TV, API30",
-      "resolution": "1920x1080",
-      "captureDate": "2026-10-22",
-      "candidateAPK": "109099f558be22a71970b56a962907053dd3b19cd6bc95b32a03101da62f0c8e",
-      "version": "2.0.0/code4",
-      "physicalDevice": true,
-      "route": "Actual selected non-test Dream, after40-second settle and presentation sampling",
-      "scene": "Deep ocean",
-      "playbackSpeed": "1.25x"
+      "file": "physical-settings.png",
+      "description": "Native settings with Show clock focused",
+      "sha256": "0c42ef1712cafe55b10e250adb834b66a4c3bdc7223a4e01e36ff76a4b4ad6ee",
+      "width": 1920,
+      "height": 1080,
+      "actualBoundNonTestDream": false
     },
     {
-      "path": "art/screenshots/settings-native.png",
-      "sha256": "b389eab5a0816ba6010dc972fb979ea0deddb6b924e065ff6110e89a95ea125f",
-      "platform": "Android TV API34 emulator",
-      "resolution": "1920x1080",
-      "captureDate": "2026-10-22",
-      "candidateAPK": "109099f558be22a71970b56a962907053dd3b19cd6bc95b32a03101da62f0c8e",
-      "version": "2.0.0/code4",
-      "physicalDevice": false,
-      "route": "Native Settings and Credits; Settings capture taken after explicit Close, after first transitional capture was rejected"
+      "file": "physical-credits.png",
+      "description": "Offline Credits",
+      "sha256": "d856e476bc3d2a8bedf9194f1f46b6bb0fdcbc197eca41a6ecd44aefdb64fd57",
+      "width": 1920,
+      "height": 1080,
+      "actualBoundNonTestDream": false
     },
     {
-      "path": "art/screenshots/credits-native.png",
-      "sha256": "38e6476aa30dbf4bae93fb447810536e509d1cf12959a95cbc618d27862e42c0",
-      "platform": "Android TV API34 emulator",
-      "resolution": "1920x1080",
-      "captureDate": "2026-10-22",
-      "candidateAPK": "109099f558be22a71970b56a962907053dd3b19cd6bc95b32a03101da62f0c8e",
-      "version": "2.0.0/code4",
-      "physicalDevice": false,
-      "route": "Native Settings and Credits; Settings capture taken after explicit Close, after first transitional capture was rejected"
+      "file": "physical-licenses-scrolled.png",
+      "description": "Scrolled Apache license",
+      "sha256": "980145668db3fca166deaffcfd5c267fb2c1e822862a60195e0f4f404410bca5",
+      "width": 1920,
+      "height": 1080,
+      "actualBoundNonTestDream": false
     },
     {
-      "path": "art/screenshots/credits-scrolled-native.png",
-      "sha256": "d602daecc60af662dac02a469190984840a4cb60fd0195dadc7512526cf0aa90",
-      "platform": "Android TV API34 emulator",
-      "resolution": "1920x1080",
-      "captureDate": "2026-10-22",
-      "candidateAPK": "109099f558be22a71970b56a962907053dd3b19cd6bc95b32a03101da62f0c8e",
-      "version": "2.0.0/code4",
-      "physicalDevice": false,
-      "route": "Native Settings and Credits; Settings capture taken after explicit Close, after first transitional capture was rejected"
+      "file": "physical-preview.png",
+      "description": "Native Preview before Home",
+      "sha256": "7c8e2aab26f4df474c40e8bf9538ad78adf258083161f241bbf8b0a988843c84",
+      "width": 1920,
+      "height": 1080,
+      "actualBoundNonTestDream": false
+    },
+    {
+      "file": "physical-preview-resumed.png",
+      "description": "Native Preview resumed after Home",
+      "sha256": "3a0676c7b1abb511486a93fe46b6d237739cbf201e2f79d4d5d28fb0f5ab700f",
+      "width": 1920,
+      "height": 1080,
+      "actualBoundNonTestDream": false
     }
   ],
-  "mediaLicenses": "See assets/NOTICE.txt; Aurelia-derived images remain CC BY-SA4.0, NOAA-derived images use the source public-domain terms."
+  "clock": "Default off and independent of randomize_all; early/final physical ON Dream captures demonstrate slow drift",
+  "presentationScope": "Three separate settled SurfaceFlinger app-layer windows per preset, no screenrecord: minimum29.9987 OFF and30.4872 ON; clock ON includes overlay redraws, not a continuous full-duration trace",
+  "sourceArtwork": "Original public v1.0.0 bundled artwork unchanged"
 }

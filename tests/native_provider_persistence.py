@@ -55,8 +55,8 @@ def main():
         rows = shell('content', 'query', '--uri', URI)
         values = dict(re.findall(r'key=([^,\n]+), value=([^\n]+)', rows))
         values = {key.strip(): value.strip() for key, value in values.items()}
-        if len(values) != 6:
-            raise RuntimeError('Expected all six existing settings from the provider')
+        if len(values) != 7:
+            raise RuntimeError('Expected all seven existing settings from the provider')
         return values
 
     def write(key, value):
@@ -86,6 +86,7 @@ def main():
                     'background': 'light' if expected['background'] != 'light' else 'dark',
                     'motion': 'fast' if expected['motion'] != 'fast' else 'slow',
                     'randomize_all': 'true' if expected['randomize_all'] != 'true' else 'false',
+                    'show_clock': 'true' if expected['show_clock'] != 'true' else 'false',
                 }
                 for key, value in updates.items():
                     write(key, value)
@@ -122,7 +123,7 @@ def main():
         (args.output / 'result.json').write_text(json.dumps(result, indent=2) + '\n')
         if not restored:
             raise RuntimeError('The original settings were not restored exactly')
-        print('Original six settings restored exactly.', flush=True)
+        print('Original seven settings restored exactly.', flush=True)
 
 
 if __name__ == '__main__':

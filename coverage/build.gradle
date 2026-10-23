@@ -15,7 +15,7 @@ java { sourceCompatibility = JavaVersion.VERSION_1_8; targetCompatibility = Java
 sourceSets {
     main.java {
         srcDirs = ['src/com/jeremykenedy/jellyfishdrift']
-        include 'JellyfishOptions.java', 'SettingsValues.java'
+        include 'JellyfishOptions.java', 'SettingsValues.java', 'FramePacer.java'
     }
     test.java { srcDirs = ['coverage-tests', 'tests'] }
 }

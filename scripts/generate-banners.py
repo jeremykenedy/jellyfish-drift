@@ -33,7 +33,7 @@ def banner(theme, mobile, still):
     tagline_y, tagline_size = (106, 13) if mobile else (111, 14)
     pill_y = 130
     illustration = 'translate(86 202) scale(1.08)' if mobile else 'translate(570 36)'
-    labels = [('Filmed scenes', 92, '#60a5fa', '#eff6ff', '#1e40af'), ('Offline', 64, '#4ade80', '#f0fdf4', '#166534'), ('No tracking or analytics', 144, '#a78bfa', '#f5f3ff', '#6d28d9')]
+    labels = [('Classic scene', 92, '#60a5fa', '#eff6ff', '#1e40af'), ('Offline', 64, '#4ade80', '#f0fdf4', '#166534'), ('No tracking or analytics', 144, '#a78bfa', '#f5f3ff', '#6d28d9')]
     pills = []
     x = 20 if mobile else 40
     for label, w, accent, light, text in labels:
@@ -45,7 +45,7 @@ def banner(theme, mobile, still):
 {'' if still else STYLE}
 <defs><linearGradient id="background" x2="1" y2="1"><stop stop-color="#0c0a09"/><stop offset="1" stop-color="#1c1917"/></linearGradient><radialGradient id="bell" cx="38%" cy="25%"><stop stop-color="#dbeafe" stop-opacity=".9"/><stop offset="1" stop-color="#6366f1" stop-opacity=".25"/></radialGradient></defs>
 <rect width="{width}" height="{height}" rx="16" fill="{background}" stroke="{'#292524' if dark else '#e5e7eb'}"/>
-<g font-family="{FONT}"><text x="{title_x}" y="{title_y}" fill="{foreground}" font-size="{title_size}" font-weight="700" letter-spacing="-.5">Jellyfish Drift</text><text x="{title_x}" y="{tagline_y}" fill="{muted}" font-size="{tagline_size}">Real jellyfish. Quiet water.</text>
+<g font-family="{FONT}"><text x="{title_x}" y="{title_y}" fill="{foreground}" font-size="{title_size}" font-weight="700" letter-spacing="-.5">Jellyfish Drift</text><text x="{title_x}" y="{tagline_y}" fill="{muted}" font-size="{tagline_size}">Classic illustrated jellyfish.</text>
 <g font-size="{'9' if mobile else '10'}" font-weight="500" text-anchor="middle">{''.join(pills)}</g></g>
 <g transform="{illustration}"><g transform="translate(62 12)"><g class="float-a">{jelly()}</g></g><g transform="translate(152 40) scale(.65)"><g class="float-b">{jelly()}</g></g></g>
 </svg>'''

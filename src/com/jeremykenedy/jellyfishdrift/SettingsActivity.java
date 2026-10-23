@@ -44,20 +44,48 @@ public final class SettingsActivity extends Activity {
     content.addView(preview);
     addChoice(
         content,
-        "Filmed scene",
+        "Background",
         "background",
         new String[] {"dark", "light", "random"},
-        new String[] {"Deep ocean", "Blue aquarium", "Random scene"},
+        new String[] {"Deep water", "Bright water", "Random"},
         "dark");
     addChoice(
         content,
-        "Playback speed",
+        "Jellyfish amount",
+        "density",
+        new String[] {"few", "handful", "many", "ton", "schools", "random"},
+        new String[] {"A few", "A handful", "Many", "A ton", "Schools", "Random"},
+        "handful");
+    addChoice(
+        content,
+        "Movement",
         "motion",
         new String[] {"slow", "normal", "fast", "random"},
-        new String[] {"0.9x", "1x (recorded speed)", "1.25x", "Random speed"},
+        new String[] {"Slow", "Natural", "Fast", "Random"},
         "normal");
+    addChoice(
+        content,
+        "Jellyfish species",
+        "species",
+        new String[] {"moon", "sea_nettle", "purple_stripe", "random"},
+        new String[] {"Moon jelly", "Pacific sea nettle", "Purple-striped jelly", "Random"},
+        "moon");
+    addChoice(
+        content,
+        "Sunlight from above",
+        "light_rays",
+        new String[] {"off", "on", "random"},
+        new String[] {"Off", "On", "Random"},
+        "off");
+    CheckBox clock = new CheckBox(this);
+    clock.setText("Show clock");
+    clock.setTextSize(18);
+    clock.setChecked(preferences.getBoolean("show_clock", false));
+    clock.setOnCheckedChangeListener(
+        (button, checked) -> preferences.edit().putBoolean("show_clock", checked).apply());
+    content.addView(clock);
     CheckBox randomize = new CheckBox(this);
-    randomize.setText("Random scene and playback speed each start");
+    randomize.setText("Randomize all settings each time the screensaver starts");
     randomize.setTextSize(18);
     randomize.setChecked(preferences.getBoolean("randomize_all", false));
     randomize.setOnCheckedChangeListener(
@@ -106,9 +134,7 @@ public final class SettingsActivity extends Activity {
           @Override
           public void onItemSelected(
               android.widget.AdapterView<?> parent, View view, int position, long id) {
-            if (!values[position].equals(preferences.getString(key, fallback))) {
-              preferences.edit().putString(key, values[position]).apply();
-            }
+            preferences.edit().putString(key, values[position]).apply();
           }
 
           @Override
@@ -132,12 +158,7 @@ public final class SettingsActivity extends Activity {
     text.setTextSize(20);
     text.setPadding(32, 20, 32, 20);
     try {
-      text.setText(
-          asset("NOTICE.txt")
-              + "\n\n"
-              + asset("CC-BY-SA-4.0.txt")
-              + "\n\nApplication code license\n"
-              + asset("LICENSE.txt"));
+      text.setText(asset("NOTICE.txt") + "\n\nApplication code license\n" + asset("LICENSE.txt"));
     } catch (java.io.IOException error) {
       text.setText("Credits could not be loaded. Please reopen settings.");
     }

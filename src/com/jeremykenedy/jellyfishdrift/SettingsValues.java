@@ -11,7 +11,8 @@ public final class SettingsValues {
     if ("motion".equals(key)) return oneOf(value, "slow", "normal", "fast", "random");
     if ("species".equals(key)) return oneOf(value, "moon", "sea_nettle", "purple_stripe", "random");
     if ("light_rays".equals(key)) return oneOf(value, "off", "on", "random");
-    if ("randomize_all".equals(key)) return oneOf(value, "true", "false");
+    if ("randomize_all".equals(key) || "show_clock".equals(key))
+      return oneOf(value, "true", "false");
     return false;
   }
 

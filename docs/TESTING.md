@@ -1,32 +1,9 @@
-# Testing and coverage
+# Testing
 
-Run the host option tests and the JaCoCo coverage gate:
+Run `bash test.sh` for original settings behavior and installer tests. Run `bash scripts/test-python-coverage.sh`, `bash scripts/test-coverage.sh`, `bash scripts/check-style.sh`, `python3 scripts/check-docs.py`, and `python3 scripts/check-privacy.py` for the maintained checks. Pure options, validation, and frame-pacing classes require 100% line and branch coverage; Android rendering, lifecycle, remote behavior, and presentation require native gates.
 
-```bash
-bash test.sh
-bash scripts/test-python-coverage.sh
-bash scripts/test-coverage.sh
-```
+Verify a same-signer update over the filmed code 4 package retains all six raw values and retains the six original rows and adds show_clock as the seventh. Test dark/light scenes, amounts/species, movement, rays, randomization, Preview/Back, Credits/Close, and the actual selected non-test Dream. Keep V2's independent package and values unchanged. Persist all private baseline files before the first mutation, including absent-file state, then restore and verify selection, app/provider data, guard/VPN, OS values, and external bytes. Record actual presentation windows separately from capture or display refresh rates.
 
-Coverage measures the standalone installer and pure, project-owned settings resolution and validation classes. Both line and branch coverage must be 100%. Android framework lifecycle and drawing code are validated through APK inspection and device checks; they are not excluded from a claimed percentage because they are not in the host coverage source set.
+Clock regression coverage includes accepted boolean values and rejection of invalid inputs. Native gates verify D-pad on/off selection, persistence through scene randomization, the off scene without an overlay, readable time, and actual position changes across a 20-second capture pair. The Android Clock View, MediaPlayer, Canvas, and lifecycle remain outside pure-Java coverage and require native checks.
 
-Build and inspect the app with:
-
-```bash
-bash build.sh
-python3 install.py --serial TV_IP:5555 --apk build/jellyfish-drift.apk
-```
-
-Verify the actual DreamService activation, D-pad settings, setting persistence, preview, pause/resume, back/exit, and uninstall on each target. Use an explicit ADB serial and restore any device settings changed during verification. Record hardware, OS/API, display resolution, and build hash in [device verification](VERIFICATION.md).
-
-## Native provider persistence regression
-
-After installing the candidate on an exclusively owned, authorized test device, run:
-
-```bash
-python3 tests/native_provider_persistence.py --serial emulator-5580 --cycles 6 --output build/native-provider-persistence
-```
-
-The helper changes only Jellyfish Drift's visual preferences and force-stops its process. It tests write-then-process-death and confirmed-process-death-then-write, compares all six raw saved values, captures command responses, and restores the original six values in cleanup. It does not install an APK, change Dream selection, request permissions, or edit OS settings. Run it before Preview and Dream quality gates. A failed case stays failed even if cleanup succeeds.
-
-This is an Android process and persistence check, not a host test or a performance benchmark. A physical comparison passed four cases each on code 3 and code 4, without reproducing the earlier dark-transition failure; see [verification](VERIFICATION.md).
+Frame-pacing tests exercise 60 Hz, 59.94 Hz, and 120 Hz display callbacks, late callbacks without accumulated draw delay, a long gap without catch-up bursts, and reset on restart. The pure scheduler is included in the coverage source set. Actual presented frame rate and Android callback lifecycle still require native tests.

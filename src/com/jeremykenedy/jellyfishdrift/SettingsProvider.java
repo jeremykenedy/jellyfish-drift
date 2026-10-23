@@ -46,7 +46,8 @@ public final class SettingsProvider extends ContentProvider {
     Context context = getContext();
     if (context == null) return 0;
     SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
-    if ("randomize_all".equals(key)) editor.putBoolean(key, Boolean.parseBoolean(value));
+    if ("randomize_all".equals(key) || "show_clock".equals(key))
+      editor.putBoolean(key, Boolean.parseBoolean(value));
     else editor.putString(key, value);
     return editor.commit() ? 1 : 0;
   }
@@ -56,32 +57,40 @@ public final class SettingsProvider extends ContentProvider {
         new MatrixCursor(
             new String[] {"key", "title", "type", "default", "choices", "randomAllowed"});
     cursor.addRow(
+        new Object[] {"background", "Background", "choice", "dark", "dark|light|random", true});
+    cursor.addRow(
         new Object[] {
-          "background",
-          "Filmed scene (dark: Deep ocean; light: Blue aquarium)",
+          "density",
+          "Jellyfish amount",
           "choice",
-          "dark",
-          "dark|light|random",
+          "handful",
+          "few|handful|many|ton|schools|random",
           true
         });
     cursor.addRow(
+        new Object[] {"motion", "Movement", "choice", "normal", "slow|normal|fast|random", true});
+    cursor.addRow(
         new Object[] {
-          "motion",
-          "Playback speed (slow: 0.9x; normal: 1x; fast: 1.25x)",
+          "species",
+          "Jellyfish species",
           "choice",
-          "normal",
-          "slow|normal|fast|random",
+          "moon",
+          "moon|sea_nettle|purple_stripe|random",
           true
         });
+    cursor.addRow(
+        new Object[] {"light_rays", "Sunlight from above", "choice", "off", "off|on|random", true});
     cursor.addRow(
         new Object[] {
           "randomize_all",
-          "Random scene and playback speed each start",
+          "Randomize all settings each start",
           "boolean",
           "false",
           "true|false",
           false
         });
+    cursor.addRow(
+        new Object[] {"show_clock", "Show clock", "boolean", "false", "true|false", false});
     return cursor;
   }
 
@@ -97,6 +106,8 @@ public final class SettingsProvider extends ContentProvider {
         new Object[] {
           "randomize_all", Boolean.toString(preferences.getBoolean("randomize_all", false))
         });
+    cursor.addRow(
+        new Object[] {"show_clock", Boolean.toString(preferences.getBoolean("show_clock", false))});
     return cursor;
   }
 
